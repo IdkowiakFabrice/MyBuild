@@ -12,6 +12,7 @@ class Register extends Component{
             firstname:'',
             lastname:'',
             passwordConfirmation:'',
+            email:''
         };
       }
 
@@ -24,13 +25,14 @@ class Register extends Component{
       }
     
     _signin = () => {
-        const link = 'https://whereismycar.herokuapp.com/api/authenticate/signup';
+        const link = ' https://mybuild-api.herokuapp.com/api/authenticate/signup';
         const newUser = {
             "lastname": this.state.lastname,
             "username": this.state.username,
             "password": this.state.password,
             "passwordConfirmation": this.state.passwordConfirmation,
             "firstname": this.state.firstname,
+            'mail': this.state.email.toLowerCase()
 
           };
         let axiosConfig = {
@@ -69,6 +71,12 @@ class Register extends Component{
                 style={styles.input}
                 onChangeText={(username) => {this.setState({username})}}
                 value={this.state.username}>
+            </TextInput>
+            <TextInput
+                placeholder="Adresse mail"
+                style={styles.input}
+                onChangeText={(email) => {this.setState({email})}}
+                value={this.state.email}>
             </TextInput>
             <TextInput
                 placeholder="Mot de passe"

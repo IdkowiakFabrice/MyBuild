@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Login from '../screens/Login'
 import Register from '../screens/Register'
+import RegisterSuccess from '../screens/RegisterSuccess'
 
 const Stack = createStackNavigator()
 
@@ -21,6 +22,7 @@ function MainStackNavigator() {
     }}>
         <Stack.Screen name='Login' component={Login} options={{ title: 'Login page' }} />
         <Stack.Screen name='Register' component={Register} options={{ title: 'Register page' }} />
+        <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} options={{ title: 'RegisterSucces' }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

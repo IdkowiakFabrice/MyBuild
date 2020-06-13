@@ -22,7 +22,7 @@ class Login extends Component{
       }
 
       _login = () => {
-        const link = 'https://whereismycar.herokuapp.com/api/authenticate/signin';
+        const link = ' https://mybuild-api.herokuapp.com/api/authenticate/signin';
         const user = {
             "username": this.state.username,
             "password": this.state.password,
@@ -34,8 +34,6 @@ class Login extends Component{
         };
         axios.post(link, user, axiosConfig)
         .then((response) => {
-            console.log(JSON.stringify(response))
-
             this._storeData(response.data.data.meta.token, response.data.data.user.id.toString());
             this.props.navigation.navigate('Map')
         })
