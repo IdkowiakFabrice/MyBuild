@@ -2,6 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
+import Accueil from '../screens/Accueil'
 import Login from '../screens/Login'
 import Register from '../screens/Register'
 import RegisterSuccess from '../screens/RegisterSuccess'
@@ -20,6 +21,7 @@ function MainStackNavigator() {
         headerTintColor: 'orange'
     
     }}>
+        <Stack.Screen name='Accueil' component={Accueil} options={{ title: 'MyBuild' }} />
         <Stack.Screen name='Login' component={Login} options={{ title: 'Login page' }} />
         <Stack.Screen name='Register' component={Register} options={{ title: 'Register page' }} />
         <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} options={{ title: 'RegisterSucces' }} />
