@@ -35,7 +35,7 @@ class Login extends Component{
         axios.post(link, user, axiosConfig)
         .then((response) => {
             this._storeData(response.data.data.meta.token, response.data.data.user.id.toString());
-            this.props.navigation.navigate('Map')
+            this.props.navigation.navigate('ChampionsListPage')
         })
         .catch((error) => {
             console.log(error);
