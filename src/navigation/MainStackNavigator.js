@@ -14,17 +14,13 @@ function MainStackNavigator() {
     <NavigationContainer>
       <Stack.Navigator
       screenOptions={{
-        gestureEnabled: true,
-        headerStyle: {
-          backgroundColor: '#101010'
-        },
-        headerTintColor: 'orange'
-    
-    }}>
-        <Stack.Screen name='Accueil' component={Accueil} options={{ title: 'MyBuild' }} />
-        <Stack.Screen name='Login' component={Login} options={{ title: 'Login page' }} />
-        <Stack.Screen name='Register' component={Register} options={{ title: 'Register page' }} />
-        <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} options={{ title: 'RegisterSucces' }} />
+        headerShown: false
+      }}
+      >
+        <Stack.Screen name='Accueil' component={Accueil} />
+        <Stack.Screen name='Login' component={Login}  />
+        <Stack.Screen name='Register' component={Register}  />
+        <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} />
       </Stack.Navigator>
     </NavigationContainer>
   )

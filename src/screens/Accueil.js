@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
 import { Text, ScrollView, View, TouchableOpacity } from 'react-native'
 import { Avatar, Image} from 'react-native-elements';
+import {Appbar} from 'react-native-paper'
 import { CHAMPIONBYID } from '../../ChampionObject'
 import * as axios from 'axios'
 
 export default class Accueil extends Component {
+    static navigationOptions = {
+        headerMode: null
+    }
     constructor(props) {
         super(props);
       }
     render(){
         return (
+            <View>
+            <Appbar.Header>
+          <Appbar.Content
+              title="MyBuild"
+          />
+        </Appbar.Header>
             <ScrollView>
                 {addImageToChampion(CHAMPIONBYID)}
                 {CHAMPIONBYID.map(champion => (
@@ -23,6 +33,7 @@ export default class Accueil extends Component {
                 </View>
             ))}
             </ScrollView>
+            </View>
         )
     }
 }
