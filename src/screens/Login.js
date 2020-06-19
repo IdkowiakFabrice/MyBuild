@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage } from 'react-native'
 import * as axios from 'axios'
 
+import Header from '../components/Header'
+
+
 const{width: WIDTH} = Dimensions.get('window') 
 
 class Login extends Component{
@@ -45,6 +48,7 @@ class Login extends Component{
     render(){
     return (
         <View style={styles.container}>
+            <Header />
             <Text style={styles.text}>Login</Text>
             <TextInput
                 placeholder="Nom d'utilisateur"
@@ -77,10 +81,8 @@ class Login extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ebebeb',
     },    
     text: {
         color: '#101010',

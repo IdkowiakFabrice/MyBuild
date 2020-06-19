@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage  } from 'react-native'
 import * as axios from 'axios'
 
+import Header from '../components/Header'
+
 const{width: WIDTH} = Dimensions.get('window') 
 class Register extends Component{
     constructor(props) {
@@ -53,6 +55,7 @@ class Register extends Component{
     render(){
     return (
         <View style={styles.container}>
+            <Header />
             <Text style={styles.text}>Register</Text>
             <TextInput
                 placeholder="Nom"
@@ -106,10 +109,8 @@ class Register extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ebebeb'
     },
     text: {
         color: '#101010',

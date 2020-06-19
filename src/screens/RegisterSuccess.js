@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage  } from 'react-native'
 import * as axios from 'axios'
 
+import Header from '../components/Header'
+
+
 const{width: WIDTH} = Dimensions.get('window')
 class RegisterSuccess extends Component{
     constructor(props) {
@@ -36,6 +39,7 @@ class RegisterSuccess extends Component{
     render() {
         return(
             <View style = {styles.container}>
+                <Header />
                 <Text style = {styles.text}>Inscription réussie!</Text>
                 <Text>Bienvenue: { this.state.username }</Text>
                 <TouchableOpacity
@@ -49,10 +53,8 @@ class RegisterSuccess extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ebebeb'
     },
     text: {
         color: '#101010',
