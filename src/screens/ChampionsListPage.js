@@ -5,6 +5,9 @@ import {Appbar} from 'react-native-paper'
 import { CHAMPIONBYID } from '../../ChampionObject'
 import * as axios from 'axios'
 
+import Header from '../components/Header'
+
+
 export default class Accueil extends Component {
     static navigationOptions = {
         headerMode: null
@@ -15,11 +18,7 @@ export default class Accueil extends Component {
     render(){
         return (
             <View>
-            <Appbar.Header>
-          <Appbar.Content
-              title="MyBuild"
-          />
-        </Appbar.Header>
+            <Header />
             <ScrollView>
                 {addImageToChampion(CHAMPIONBYID)}
                 {CHAMPIONBYID.map(champion => (
