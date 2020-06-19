@@ -1,48 +1,58 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, View, TouchableOpacity } from 'react-native'
-import { Avatar, Image} from 'react-native-elements';
+import { Text, View, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native'
 import {Appbar} from 'react-native-paper'
-import { CHAMPIONBYID } from '../../ChampionObject'
-import * as axios from 'axios'
-
+// Image zed: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmJpYwAhSeYLUMj-MvGsr1JTf5Hzh4KOVfnOfvhxVPtJ13AhFo&usqp=CAU
+// image theme lol : https://theme.zdassets.com/theme_assets/43400/87a1ef48e43b8cf114017e3ad51b801951b20fcf.jpg
 export default class Accueil extends Component {
-    static navigationOptions = {
-        headerMode: null
-    }
-    constructor(props) {
-        super(props);
-      }
-    render(){
+    render() {
         return (
             <View>
-            <Appbar.Header>
+                <Appbar.Header>
           <Appbar.Content
               title="MyBuild"
           />
         </Appbar.Header>
-            <ScrollView>
-                {addImageToChampion(CHAMPIONBYID)}
-                {CHAMPIONBYID.map(champion => (
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10, alignSelf: 'center',justifyContent:'space-between' }}>
-                    <Text style={{ fontSize: 20, paddingRight: 10}}>{champion.name}</Text>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-                        <Image style={{width:100, height:100}}
-                        source={{ uri: champion.image }}
-                        />
+                <ImageBackground source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmJpYwAhSeYLUMj-MvGsr1JTf5Hzh4KOVfnOfvhxVPtJ13AhFo&usqp=CAU'}} style={{width: '100%', height: '95%'}}>
+                    <TouchableOpacity
+                        style={styles.buttonLoginContainer}
+                        onPress={() => this.props.navigation.navigate('Login')}>
+                        <Text style={styles.signInText}>Se connecter</Text>
                     </TouchableOpacity>
-                </View>
-            ))}
-            </ScrollView>
+                    <TouchableOpacity
+                        style={styles.buttonRegisterContainer}
+                        onPress={() => this.props.navigation.navigate('Register')}>
+                        <Text style={styles.signUpText}>S'inscrire</Text>
+                    </TouchableOpacity>                
+                </ImageBackground>
             </View>
         )
     }
 }
-function addImageToChampion(CHAMPIONBYID) {
-    let i = 0
-    CHAMPIONBYID = CHAMPIONBYID.map(function(champion){
-       champion.image = `http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/${champion['name']}.png`
-       console.log(champion.image)
-       i ++
-       return champion
-    })
-}
+
+const styles = StyleSheet.create({
+    buttonLoginContainer :{
+    backgroundColor: '#222',
+    borderRadius: 5,
+    padding: 10,
+    marginBottom:2,
+    marginTop: '130%',
+    margin: 20
+    },
+    buttonRegisterContainer :{
+        backgroundColor: '#222',
+        borderRadius: 5,
+        padding: 10,
+        margin: 20
+        },
+    signInText:{
+        color:'orange',
+        fontSize:20,
+        textAlign:'center'
+    },
+    signUpText: {
+        color:'orange',
+        fontSize:20,
+        textAlign:'center'
+    }
+  });
+  

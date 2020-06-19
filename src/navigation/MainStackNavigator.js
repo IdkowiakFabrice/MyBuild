@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import Accueil from '../screens/Accueil'
+import ChampionListPage from '../screens/ChampionListPage'
 import Login from '../screens/Login'
 import Register from '../screens/Register'
 import RegisterSuccess from '../screens/RegisterSuccess'
@@ -13,11 +14,13 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+      initialRouteName="Accueil"
       screenOptions={{
         headerShown: false
       }}
       >
         <Stack.Screen name='Accueil' component={Accueil} />
+        <Stack.Screen name='ChampionListPage' component={ChampionListPage} />
         <Stack.Screen name='Login' component={Login}  />
         <Stack.Screen name='Register' component={Register}  />
         <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} />
