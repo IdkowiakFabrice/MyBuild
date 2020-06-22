@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage  } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground  } from 'react-native'
 import * as axios from 'axios'
 
 import Header from '../components/Header'
@@ -54,8 +54,8 @@ class Register extends Component{
     
     render(){
     return (
+        <ImageBackground source={require('../../assets/register.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View style={styles.container}>
-            <Header />
             <Text style={styles.text}>Register</Text>
             <TextInput
                 placeholder="Nom"
@@ -102,7 +102,13 @@ class Register extends Component{
                 >
                 <Text style={styles.buttonTextLogin}>Register</Text>
             </TouchableOpacity>
+            <Text style={{color: 'rgba(255,255,255,0.7)'}}>Vous possedez déjà un compte ? Cliquez ici: </Text>
+            <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Login')}>
+                <Text style={styles.signInText}>Se connecter</Text>
+            </TouchableOpacity>
         </View>
+        </ImageBackground>
     )
 }
 }
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        color: '#101010',
+        color: 'rgba(255,255,255,0.7)',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom:30,
@@ -126,10 +132,10 @@ const styles = StyleSheet.create({
     },
     buttonTextLogin: {
         fontSize: 20,
-        color: 'orange'
+        color: '#d8131a'
     },
-    SignUpText: {
-        color: 'orange',
+    signInText: {
+        color: '#d8131a',
     },
     input: {
         width: WIDTH -55,

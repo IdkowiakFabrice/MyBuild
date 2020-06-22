@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, View, TouchableOpacity } from 'react-native'
+import { Text, ScrollView, View, TouchableOpacity, ImageBackground } from 'react-native'
 import { Avatar, Image} from 'react-native-elements';
 import {Appbar} from 'react-native-paper'
 import { CHAMPIONBYID } from '../../ChampionObject'
@@ -17,15 +17,16 @@ export default class Accueil extends Component {
       }
     render(){
         return (
+            <ImageBackground source={require('../../assets/bg.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
             <View>
             <Header />
             <ScrollView>
                 {addImageToChampion(CHAMPIONBYID)}
                 {CHAMPIONBYID.map(champion => (
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10, alignSelf: 'center',justifyContent:'space-between' }}>
-                    <Text style={{ fontSize: 20, paddingRight: 10}}>{champion.name}</Text>
+                    <View style={{ alignItems: 'center', marginBottom: 10, alignSelf: 'center',justifyContent:'space-between' }}>
+                    <Text style={{ fontSize: 20, paddingRight: 10, color:'#bf8d3a'}}>{champion.name}</Text>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-                        <Image style={{width:100, height:100}}
+                        <Image style={{flexDirection: 'row', width:100, height:100}}
                         source={{ uri: champion.image }}
                         />
                     </TouchableOpacity>
@@ -33,6 +34,7 @@ export default class Accueil extends Component {
             ))}
             </ScrollView>
             </View>
+            </ImageBackground>
         )
     }
 }
