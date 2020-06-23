@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         padding: 25,
         alignItems: 'flex-start',
         flexDirection:'row',
+        borderBottomWidth:1,
         borderBottomColor: '#bf8d3a',
     },
     headerText: {

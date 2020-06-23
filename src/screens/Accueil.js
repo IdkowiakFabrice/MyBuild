@@ -8,9 +8,8 @@ import Header from '../components/Header'
 export default class Accueil extends Component {
     render() {
         return (
+            <ImageBackground source={require('../../assets/accueil.jpg')} style={{width: '100%', height: '100%',flex:1}}>
             <View>
-                <Header />
-                <ImageBackground source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmJpYwAhSeYLUMj-MvGsr1JTf5Hzh4KOVfnOfvhxVPtJ13AhFo&usqp=CAU'}} style={{width: '100%', height: '95%'}}>
                     <TouchableOpacity
                         style={styles.buttonLoginContainer}
                         onPress={() => this.props.navigation.navigate('Login')}>
@@ -21,34 +20,38 @@ export default class Accueil extends Component {
                         onPress={() => this.props.navigation.navigate('Register')}>
                         <Text style={styles.signUpText}>S'inscrire</Text>
                     </TouchableOpacity>                
-                </ImageBackground>
             </View>
+            </ImageBackground>
         )
     }
 }
 
 const styles = StyleSheet.create({
     buttonLoginContainer :{
-    backgroundColor: '#222',
+    backgroundColor: '#010a13',
     borderRadius: 5,
     padding: 10,
     marginBottom:2,
     marginTop: '130%',
-    margin: 20
+    margin: 20,
+    borderWidth:1,
+    borderColor: '#bf8d3a',
     },
     buttonRegisterContainer :{
-        backgroundColor: '#222',
+        backgroundColor: '#010a13',
         borderRadius: 5,
         padding: 10,
-        margin: 20
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#bf8d3a',
         },
     signInText:{
-        color:'orange',
+        color:'#bf8d3a',
         fontSize:20,
         textAlign:'center'
     },
     signUpText: {
-        color:'orange',
+        color:'#bf8d3a',
         fontSize:20,
         textAlign:'center'
     }
