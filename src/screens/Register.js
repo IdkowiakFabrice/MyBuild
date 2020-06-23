@@ -56,7 +56,7 @@ class Register extends Component{
     return (
         <ImageBackground source={require('../../assets/register.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View style={styles.container}>
-            <Text style={styles.text}>Register</Text>
+            <Text style={styles.text}>S'inscrire</Text>
             <TextInput
                 placeholder="Nom"
                 style={styles.input}
@@ -100,7 +100,7 @@ class Register extends Component{
                 style={styles.buttonContainer}
                 onPress={this._signin}
                 >
-                <Text style={styles.buttonTextLogin}>Register</Text>
+                <Text style={styles.buttonTextLogin}>S'inscrire</Text>
             </TouchableOpacity>
             <Text style={{color: 'rgba(255,255,255,0.7)'}}>Vous possedez déjà un compte ? Cliquez ici: </Text>
             <TouchableOpacity
@@ -125,14 +125,19 @@ const styles = StyleSheet.create({
         marginBottom:30,
     },
     buttonContainer: {
-        backgroundColor: '#222',
+        backgroundColor: 'rgba(20,20,20,1)',
         borderRadius: 5,
-        padding: 10,
+        
         margin: 20
     },
     buttonTextLogin: {
         fontSize: 20,
-        color: '#d8131a'
+        color: '#d8131a',
+        paddingHorizontal: 20,
+        borderWidth:1,
+        borderColor: '#d8131a',
+        borderRadius: 5,
+        padding: 10,
     },
     signInText: {
         color: '#d8131a',
@@ -143,8 +148,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         fontSize: 16,
         paddingLeft: 45,
-        backgroundColor:'rgba(0,0,0,0.35)',
-        color:'rgba(255,255,255,0.7)',
+        backgroundColor:'rgba(95,95,95,0.3)',
+        color:'rgba(255,255,255,1)',
         marginHorizontal: 25,
         marginBottom: 20,
     }
