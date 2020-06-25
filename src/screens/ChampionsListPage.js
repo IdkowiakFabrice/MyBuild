@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Text, ScrollView, View, TouchableOpacity, ImageBackground, AsyncStorage } from 'react-native'
 import { Image } from 'react-native-elements';
 import { CHAMPIONBYID } from '../../ChampionObject'
-import * as axios from 'axios'
 
 import Header from '../components/Header'
 
