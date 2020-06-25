@@ -17,6 +17,22 @@ export default class ChampionListBuild extends Component {
         idChamp:'0',
         imageChamp: '',
         item1: '',
+        item2: '',
+        item3: '',
+        item4: '',
+        item5: '',
+        item6: '',
+        rp1: '',
+        rp2: '',
+        rp3: '',
+        rp4: '',
+        rs1: '',
+        rs2: '',
+        rt1: '',
+        rt2: '',
+        rt3: '',
+        sum1: '',
+        sum2: '',
       };
 
     _retrieveData = async () => {
@@ -25,10 +41,6 @@ export default class ChampionListBuild extends Component {
             const idUser = await AsyncStorage.getItem('@idUser');
             const idChamp = await AsyncStorage.getItem('@idChamp');
             const imageChamp = await AsyncStorage.getItem('@imageChamp');
-            console.log('token:%s', token)
-            console.log('userid:%s', idUser)
-            console.log('idChamp:%s', idChamp)
-            console.log('imageChamp:%s', imageChamp)
             if (idUser !== null) {
               this.setState({ idUser })
             }
@@ -41,7 +53,6 @@ export default class ChampionListBuild extends Component {
             if (imageChamp !== null) {
                 this.setState({ imageChamp })
             }
-            //this._getMarker(idUser, token)
             this._jsonListBuild()
         } catch (error) {
             console.error(error);
@@ -57,9 +68,8 @@ export default class ChampionListBuild extends Component {
         };
         axios.get('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/build/1', axiosConfig)
         .then((response) => {
-          console.log(response.data.data.build.item1)
-          this.state.item1 = response.data.data.build.item1
-          
+            let item1 = response.data.data.build.item1
+            this.setState({item1})
         })
         .catch((error) => {
           console.log(error)
@@ -75,12 +85,12 @@ export default class ChampionListBuild extends Component {
                 <Header />
                 <ScrollView>
                     <View style={styles.iconChamp}>
-                    <Avatar
-                        size='large'
-                        source={{uri : this.state.imageChamp}}
+                    <Image
+                    style={{flexDirection: 'row', width:100, height:100}}
+                    source={{uri : this.state.imageChamp}}
                     />
-                    <Avatar
-                        size='large'
+                    <Image
+                    style={{flexDirection: 'row', width:100, height:100}}
                         source={{uri : this.state.item1}}
                     />
                     </View>
