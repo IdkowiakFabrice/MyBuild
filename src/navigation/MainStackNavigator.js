@@ -7,6 +7,7 @@ import ChampionsListPage from '../screens/ChampionsListPage'
 import Login from '../screens/Login'
 import Register from '../screens/Register'
 import RegisterSuccess from '../screens/RegisterSuccess'
+import Profile from '../screens/Profile'
 
 const Stack = createStackNavigator()
 
@@ -14,7 +15,7 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName="Accueil"
+      initialRouteName="Profile"
       screenOptions={{
         headerShown: false
       }}
@@ -24,6 +25,7 @@ function MainStackNavigator() {
         <Stack.Screen name='Login' component={Login}  />
         <Stack.Screen name='Register' component={Register}  />
         <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} />
+        <Stack.Screen name='Profile' component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   )
