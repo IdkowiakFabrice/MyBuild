@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage  } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground  } from 'react-native'
 import * as axios from 'axios'
 
 import Header from '../components/Header'
@@ -54,9 +54,9 @@ class Register extends Component{
     
     render(){
     return (
+        <ImageBackground source={require('../../assets/register.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View style={styles.container}>
-            <Header />
-            <Text style={styles.text}>Register</Text>
+            <Text style={styles.text}>S'inscrire</Text>
             <TextInput
                 placeholder="Nom"
                 style={styles.input}
@@ -100,9 +100,15 @@ class Register extends Component{
                 style={styles.buttonContainer}
                 onPress={this._signin}
                 >
-                <Text style={styles.buttonTextLogin}>Register</Text>
+                <Text style={styles.buttonTextLogin}>S'inscrire</Text>
+            </TouchableOpacity>
+            <Text style={{color: 'rgba(255,255,255,0.7)'}}>Vous possedez déjà un compte ? Cliquez ici: </Text>
+            <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Login')}>
+                <Text style={styles.signInText}>Se connecter</Text>
             </TouchableOpacity>
         </View>
+        </ImageBackground>
     )
 }
 }
@@ -113,23 +119,28 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        color: '#101010',
+        color: 'rgba(255,255,255,0.7)',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom:30,
     },
     buttonContainer: {
-        backgroundColor: '#222',
+        backgroundColor: 'rgba(20,20,20,1)',
         borderRadius: 5,
-        padding: 10,
+        
         margin: 20
     },
     buttonTextLogin: {
         fontSize: 20,
-        color: 'orange'
+        color: '#d8131a',
+        paddingHorizontal: 20,
+        borderWidth:1,
+        borderColor: '#d8131a',
+        borderRadius: 5,
+        padding: 10,
     },
-    SignUpText: {
-        color: 'orange',
+    signInText: {
+        color: '#d8131a',
     },
     input: {
         width: WIDTH -55,
@@ -137,8 +148,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         fontSize: 16,
         paddingLeft: 45,
-        backgroundColor:'rgba(0,0,0,0.35)',
-        color:'rgba(255,255,255,0.7)',
+        backgroundColor:'rgba(95,95,95,0.3)',
+        color:'rgba(255,255,255,1)',
         marginHorizontal: 25,
         marginBottom: 20,
     }

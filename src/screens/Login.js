@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground } from 'react-native'
 import * as axios from 'axios'
 
 import Header from '../components/Header'
@@ -47,9 +47,9 @@ class Login extends Component{
 
     render(){
     return (
+        <ImageBackground source={require('../../assets/login.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View style={styles.container}>
-            <Header />
-            <Text style={styles.text}>Login</Text>
+            <Text style={styles.text}>Se connecter</Text>
             <TextInput
                 placeholder="Nom d'utilisateur"
                 style={styles.input}
@@ -67,14 +67,15 @@ class Login extends Component{
                 style={styles.buttonContainer}
                 onPress={this._login}
                 >
-                <Text style={styles.buttonTextLogin}>Connexion</Text>
+                <Text style={styles.buttonTextLogin}>Se connecter</Text>
             </TouchableOpacity>
-            <Text>Vous n'avez pas de compte ? Cliquez ici: </Text>
+            <Text style={styles.registerText}>Vous n'avez pas de compte ? Cliquez ici: </Text>
             <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Register')}>
                 <Text style={styles.signUpText}>S'inscrire</Text>
             </TouchableOpacity>
         </View>
+        </ImageBackground>
     )
 }
 }
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },    
     text: {
-        color: '#101010',
+        color: 'rgba(255,255,255,0.7)',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 30,
@@ -93,16 +94,21 @@ const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: '#222',
         borderRadius: 5,
-        padding: 10,
-        margin: 20
+        margin: 20,
+        
     },
     buttonTextLogin: {
         fontSize: 20,
-        color: 'orange',
+        color: '#67d0d3',
         paddingHorizontal: 20,
+        borderWidth:1,
+        borderColor: '#67d0d3',
+        borderRadius: 5,
+        padding: 10,
+        
     },
     signUpText: {
-        color: 'orange',
+        color: '#67d0d3',
     },
     input: {
         width: WIDTH -55,
@@ -110,10 +116,14 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         fontSize: 16,
         paddingLeft: 45,
-        backgroundColor:'rgba(0,0,0,0.35)',
+        backgroundColor:'rgba(0,0,0,0.7)',
         color:'rgba(255,255,255,0.7)',
         marginHorizontal: 25,
         marginBottom: 20,
+    },
+    registerText:   {
+    color: 'rgba(255,255,255,0.7)',
+    
     }
 })
 
