@@ -8,6 +8,7 @@ import Login from '../screens/Login'
 import Register from '../screens/Register'
 import RegisterSuccess from '../screens/RegisterSuccess'
 import ChampionListBuild from '../screens/ChampionListBuild'
+import BuildCreaction from '../screens/BuildCreation'
 
 const Stack = createStackNavigator()
 
@@ -26,6 +27,7 @@ function MainStackNavigator() {
         <Stack.Screen name='Register' component={Register}  />
         <Stack.Screen name='RegisterSuccess' component={RegisterSuccess} />
         <Stack.Screen name='ChampionListBuild' component={ChampionListBuild} />
+        <Stack.Screen name='BuildCreaction' component={BuildCreaction} />
       </Stack.Navigator>
     </NavigationContainer>
   )

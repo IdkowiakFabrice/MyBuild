@@ -3,6 +3,7 @@ import { Text, View, ScrollView, Image, AsyncStorage, StyleSheet } from 'react-n
 import { CHAMPIONBYID } from '../../ChampionObject'
 import Header from '../components/Header'
 import * as axios from 'axios'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 
 export default class ChampionListBuild extends Component {
@@ -88,12 +89,18 @@ export default class ChampionListBuild extends Component {
                     style={{flexDirection: 'row', width:100, height:100}}
                     source={{uri : this.state.imageChamp}}
                     />
+                    </View>
+                    <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
                     <Image
                     style={{flexDirection: 'row', width:100, height:100}}
                         source={{uri : this.state.item1}}
                     />
-                    </View>
-                    <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('BuildCreaction')}
+                        style={styles.buttonContainer}
+                        >
+                            <Text>+ Ajouter un build</Text>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         )
@@ -111,5 +118,10 @@ const styles = StyleSheet.create({
         color:'#bf8d3a',
         alignSelf:'center',
     },
+    buttonContainer: {
+        backgroundColor: 'green',
+        borderRadius: 5,
+
+    }
 
 })
