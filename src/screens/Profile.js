@@ -18,17 +18,17 @@ class Profile extends Component{
         };
       }
 
-      _storeData = (token, username) => {
+      _storeData = (token, uuid) => {
         try {
-          AsyncStorage.multiSet([['@token', token], ['@username', username]])
+          AsyncStorage.multiSet([['@token', token], ['@uuid', uuid]])
         } catch (error) {
          console.error(error);
         }
       }
-      'https://mybuild-api.herokuapp.com/api/users/{uuid}'
+      
     _signin = () => {
-        const link = ' https://mybuild-api.herokuapp.com/api/authenticate/signup';
-        const newUser = {
+        const link = 'https://mybuild-api.herokuapp.com/api/users/{uuid}';
+        const newInfo = {
             "lastname": this.state.lastname,
             "username": this.state.username,
             "password": this.state.password,
@@ -42,19 +42,11 @@ class Profile extends Component{
                 'Content-Type': 'application/json'
             }
         };
-        axios.post(link, newUser, axiosConfig)
-        .then((response) => {
-            this._storeData(response.data.data.meta.token, response.data.data.user.username);
-            this.props.navigation.navigate('RegisterSuccess')
-        })
-        .catch((error) => {
-            console.log(error);
-        });
     }
     
     render(){
     return (
-        <ImageBackground source={require('../../assets/profile2.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
+        <ImageBackground source={require('../../assets/profile.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View style={styles.container}>
         <TouchableOpacity style={styles.touch}
                 onPress={() => this.props.navigation.navigate('ChampionsListPage')}>
@@ -102,7 +94,12 @@ class Profile extends Component{
                 onChangeText={(passwordConfirmation) => {this.setState({passwordConfirmation})}}
                 value={this.state.passwordConfirmation}>
             </TextInput>
-            
+            <TouchableOpacity
+                style={styles.buttonContainer}
+                onPress={this._signin}
+                >
+                <Text style={styles.buttonTextSave}>Sauvegarder</Text>
+            </TouchableOpacity>
             
             
             
@@ -124,7 +121,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         left: 0,
-        top: 15
+        top: 12
     },
     tinyLogo:{
         flex: 0,
@@ -133,7 +130,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         position: 'absolute',
         left: 0,
-        top: 15
+        top: 12
     },
     text: {
         color: 'rgba(255,255,255,1)',
@@ -147,12 +144,12 @@ const styles = StyleSheet.create({
         
         margin: 20
     },
-    buttonTextLogin: {
+    buttonTextSave: {
         fontSize: 20,
-        color: '#d8131a',
+        color: '#FF00FF',
         paddingHorizontal: 20,
         borderWidth:1,
-        borderColor: '#d8131a',
+        borderColor: '#FF00FF',
         borderRadius: 5,
         padding: 10,
     },
