@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
-import { block } from 'react-native-reanimated'
+import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
-export default class Header extends Component {
-    render() {
+export default function Header() {
+    const navigation = useNavigation();
+
         return (
             <View style={styles.header}>
-                <Text style= {styles.headerText}>MyBuild                                        </Text>
-                <Text style= {styles.headerText}>                                           Profil</Text>
-
+                <Text style= {styles.headerText}>MyBuild                                                                         </Text>
+                <TouchableOpacity style={styles.touch}
+                onPress={() => navigation.navigate('Profile')}>
+              <Image
+        style={styles.profilIcon}
+        source={require('../../assets/profil.png')}
+      />
+            </TouchableOpacity>
             </View>
         )
     }
-}
 
 const styles = StyleSheet.create({
     header: {
@@ -25,5 +30,23 @@ const styles = StyleSheet.create({
     },
     headerText: {
         color: '#bf8d3a',
-    }
+    },
+    touch:{
+        flex: 0,
+        width: 35,
+        height: 35,
+        resizeMode: 'contain',
+        position: 'absolute',
+        right: 0,
+        top: 15
+    },
+    profilIcon:{
+        flex: 0,
+        width: 35,
+        height: 35,
+        resizeMode: 'contain',
+        position: 'absolute',
+        right: 0,
+        top: 15
+    },
 })

@@ -26,7 +26,7 @@ export default class Accueil extends Component {
                     <View style={{ alignItems: 'center', marginBottom: 10, alignSelf: 'center',justifyContent:'space-between' }}>
                     <Text style={{ fontSize: 20, paddingRight: 10, color:'#bf8d3a'}}>{champion.name}</Text>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-                        <Image style={{flexDirection: 'row', width:100, height:100}}
+                        <Image style={{flexDirection:'row', width:100, height:100,}}
                         source={{ uri: champion.image }}
                         />
                     </TouchableOpacity>
@@ -42,7 +42,6 @@ function addImageToChampion(CHAMPIONBYID) {
     let i = 0
     CHAMPIONBYID = CHAMPIONBYID.map(function(champion){
        champion.image = `http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/${champion['name']}.png`
-       console.log(champion.image)
        i ++
        return champion
     })
