@@ -15,7 +15,6 @@ export default function Header() {
         source={require('../../assets/profil.png')}
       />
             </TouchableOpacity>
-
             </View>
         )
     }

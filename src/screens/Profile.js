@@ -14,36 +14,80 @@ class Profile extends Component{
             firstname:'',
             lastname:'',
             passwordConfirmation:'',
-            email:''
+            mail:'',
+            idUser:'',
+            token : '',
         };
       }
 
-      _storeData = (token, uuid) => {
+      _retrieveData = async () => {
         try {
-          AsyncStorage.multiSet([['@token', token], ['@uuid', uuid]])
+            const token = await AsyncStorage.getItem('@token');
+            const idUser = await AsyncStorage.getItem('@idUser');
+            console.log('token:%s', token)
+            console.log('userid:%s', idUser)
+            if (idUser !== null) {
+              this.setState({ idUser })
+            }
+            if (token !== null) {
+                this.setState({ token })
+            }
+            this._getProfileData(idUser, token)
+    
         } catch (error) {
-         console.error(error);
+            console.error(error);
         }
+      };
+
+      _getProfileData = (idUser, token) => {
+        let axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+          }
+        };
+        axios.get("https://mybuild-api.herokuapp.com/api/users/" + idUser, axiosConfig)
+        .then((response) => {
+            console.log(response.data.data.user)
+            let user = response.data.data.user
+            this.setState({firstname:user.firstname})
+            this.setState({lastname:user.lastname})
+            this.setState({username:user.username})
+            this.setState({mail:user.mail})
+          })
+          .catch((error) => {
+            console.log(error)
+          });
       }
       
-    _signin = () => {
-        const link = 'https://mybuild-api.herokuapp.com/api/users/{uuid}';
-        const newInfo = {
+    _save = () => {
+        const updatedInfo = {
             "lastname": this.state.lastname,
             "username": this.state.username,
             "password": this.state.password,
             "passwordConfirmation": this.state.passwordConfirmation,
             "firstname": this.state.firstname,
-            'mail': this.state.email.toLowerCase()
-
+            'mail': this.state.mail.toLowerCase()
           };
         let axiosConfig = {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.state.token
             }
         };
+        if(this.state.password !== '' && this.state.passwordConfirmation !== ''){
+        axios.put('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser, updatedInfo, axiosConfig)
+        .then((response) => {
+            this.props.navigation.navigate('ChampionsListPage')
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
-    
+    }
+    componentDidMount() {
+        this._retrieveData();
+    }
     render(){
     return (
         <ImageBackground source={require('../../assets/profile.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
@@ -77,8 +121,8 @@ class Profile extends Component{
             <TextInput
                 placeholder="Adresse mail"
                 style={styles.input}
-                onChangeText={(email) => {this.setState({email})}}
-                value={this.state.email}>
+                onChangeText={(mail) => {this.setState({mail})}}
+                value={this.state.mail}>
             </TextInput>
             <TextInput
                 placeholder="Mot de passe"
@@ -96,13 +140,10 @@ class Profile extends Component{
             </TextInput>
             <TouchableOpacity
                 style={styles.buttonContainer}
-                onPress={this._signin}
+                onPress={this._save}
                 >
                 <Text style={styles.buttonTextSave}>Sauvegarder</Text>
             </TouchableOpacity>
-            
-            
-            
         </View>
         </ImageBackground>
     )

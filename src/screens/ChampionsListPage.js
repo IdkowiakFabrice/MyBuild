@@ -42,7 +42,6 @@ function addImageToChampion(CHAMPIONBYID) {
     let i = 0
     CHAMPIONBYID = CHAMPIONBYID.map(function(champion){
        champion.image = `http://ddragon.leagueoflegends.com/cdn/10.12.1/img/champion/${champion['name']}.png`
-       console.log(champion.image)
        i ++
        return champion
     })

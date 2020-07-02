@@ -15,7 +15,7 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName="Profile"
+      initialRouteName="Accueil"
       screenOptions={{
         headerShown: false
       }}
