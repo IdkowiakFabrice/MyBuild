@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, ScrollView, Image, AsyncStorage, StyleSheet } from 'react-native'
-import { CHAMPIONBYID } from '../../ChampionObject'
+import { CHAMPIONBYID } from '../utils/ChampionObject'
 import Header from '../components/Header'
 import * as axios from 'axios'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -75,6 +75,20 @@ export default class ChampionListBuild extends Component {
           console.log(error)
         });
       }
+      
+      _navigate(){
+          this._StoreData()
+          this.props.navigation.navigate('BuildCreaction')
+
+      }
+
+      _StoreData(){
+        try {
+            AsyncStorage.multiSet([['@token', token], ['@idUser', idUser], ['@idChamp', idChamp]])
+          } catch (error) {
+           console.error(error);
+          }
+      }
 
     componentDidMount(){
         this._retrieveData()
@@ -96,7 +110,7 @@ export default class ChampionListBuild extends Component {
                         source={{uri : this.state.item1}}
                     />
                     <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('BuildCreaction')}
+                        onPress={() => this._navigate()}
                         style={styles.buttonContainer}
                         >
                             <Text>+ Ajouter un build</Text>
