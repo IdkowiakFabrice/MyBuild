@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground, Image  } from 'react-native'
 import * as axios from 'axios'
 
-import Header from '../components/Header'
+import HeaderP from '../components/HeaderP'
 
 const{width: WIDTH} = Dimensions.get('window') 
 class Profile extends Component{
@@ -91,14 +91,9 @@ class Profile extends Component{
     render(){
     return (
         <ImageBackground source={require('../../assets/profile.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
+        <View  style={{width: '100%'}}>
+            <HeaderP />
         <View style={styles.container}>
-        <TouchableOpacity style={styles.touch}
-                onPress={() => this.props.navigation.navigate('ChampionsListPage')}>
-        <Image
-        style={styles.tinyLogo}
-        source={require('../../assets/back.png')}
-      />
-      </TouchableOpacity>
             <Text style={styles.text}>Profil</Text>
             <TextInput
                 placeholder="Nom"
@@ -144,6 +139,7 @@ class Profile extends Component{
                 >
                 <Text style={styles.buttonTextSave}>Sauvegarder</Text>
             </TouchableOpacity>
+        </View>
         </View>
         </ImageBackground>
     )

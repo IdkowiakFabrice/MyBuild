@@ -7,13 +7,13 @@ export default function Header() {
 
         return (
             <View style={styles.header}>
-                <Text style= {styles.headerText}>MyBuild                                                                         </Text>
+                <Text style= {styles.headerText}>MyBuild</Text>
                 <TouchableOpacity style={styles.touch}
                 onPress={() => navigation.navigate('Profile')}>
-              <Image
-        style={styles.profilIcon}
-        source={require('../../assets/profil.png')}
-      />
+                <Image
+                    style={styles.touch}
+                    source={require('../../assets/profil.png')}
+                />
             </TouchableOpacity>
             </View>
         )
@@ -32,15 +32,6 @@ const styles = StyleSheet.create({
         color: '#bf8d3a',
     },
     touch:{
-        flex: 0,
-        width: 35,
-        height: 35,
-        resizeMode: 'contain',
-        position: 'absolute',
-        right: 0,
-        top: 15
-    },
-    profilIcon:{
         flex: 0,
         width: 35,
         height: 35,

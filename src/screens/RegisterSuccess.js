@@ -38,8 +38,10 @@ class RegisterSuccess extends Component{
 
     render() {
         return(
-            <View style = {styles.container}>
+            <View  style={{width: '100%'}}>
                 <Header />
+                <View style = {styles.container}>
+
                 <Text style = {styles.text}>Inscription réussie!</Text>
                 <Text>Bienvenue: { this.state.username }</Text>
                 <TouchableOpacity
@@ -47,6 +49,7 @@ class RegisterSuccess extends Component{
                 <Text style={styles.signUpText}>Retour</Text>
             </TouchableOpacity>
             </View>
+         </View>
         )
     }
 }

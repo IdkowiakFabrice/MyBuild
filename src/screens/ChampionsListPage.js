@@ -18,7 +18,7 @@ export default class Accueil extends Component {
     render(){
         return (
             <ImageBackground source={require('../../assets/bg.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
-            <View>
+            <View  style={{width: '100%'}}>
             <Header />
             <ScrollView>
                 {addImageToChampion(CHAMPIONBYID)}
