@@ -93,7 +93,6 @@ class Profile extends Component{
         <ImageBackground source={require('../../assets/profile.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View  style={{width: '100%'}}>
             <Header />
-            </View>
         <View style={styles.container}>
             <Text style={styles.text}>Profil</Text>
             <TextInput
@@ -140,6 +139,7 @@ class Profile extends Component{
                 >
                 <Text style={styles.buttonTextSave}>Sauvegarder</Text>
             </TouchableOpacity>
+        </View>
         </View>
         </ImageBackground>
     )
