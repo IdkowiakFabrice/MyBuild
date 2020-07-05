@@ -230,92 +230,92 @@ export default class BuildCreation extends Component {
             <ScrollView>
                 <Header />
                 <Picker>
-                    <Picker.Item label="Bouclier relique" value="" />
-                    <Picker.Item label="Faucille spectrale" value="" />
-                    <Picker.Item label="Garde epaules d'acier" value="" />
-                    <Picker.Item label="Lame du voleur de sorts" value="" />
-                    <Picker.Item label="Botte de celerité" value="" />
-                    <Picker.Item label="Botte de lucidité" value="" />
-                    <Picker.Item label="Botte de mobilité" value="" />
-                    <Picker.Item label="Sandales de mercure" value="" />
-                    <Picker.Item label="Botte du berzerker" value="" />
-                    <Picker.Item label="Chaussures de sorcier" value="" />
-                    <Picker.Item label="Tabi ninja" value="" />
-                    <Picker.Item label="Mejai" value="" />
-                    <Picker.Item label="Songe de Shurelya" value="" />
-                    <Picker.Item label="Rédemption" value="" />
-                    <Picker.Item label="Graal impie d'Athene" value="" />
-                    <Picker.Item label="Creuset de Mikael" value="" />
-                    <Picker.Item label="Voeu du chevalier" value="" />
-                    <Picker.Item label="Médaillon de l'Iron Solarie" value="" />
-                    <Picker.Item label="Convergence de Zeke" value="" />
-                    <Picker.Item label="Encensoir Ardent" value="" />
-                    <Picker.Item label="Muramana" value="" />
-                    <Picker.Item label="Glaive d'ombre" value="" />
-                    <Picker.Item label="Ombres Jumelles" value="" />
-                    <Picker.Item label="Protoceinture Hextech 01" value="" />
-                    <Picker.Item label="Lithoplastron de gargouille" value="" />
-                    <Picker.Item label="Baton séculaire" value="" />
-                    <Picker.Item label="Danseur fantome" value="" />
-                    <Picker.Item label="Ouragan de Runaan" value="" />
-                    <Picker.Item label="Poignard de Statikk" value="" />
-                    <Picker.Item label="Canon ultrarapide" value="" />
-                    <Picker.Item label="Sceptre de Rylai" value="" />
-                    <Picker.Item label="Baton du vide" value="" />
-                    <Picker.Item label="Gloire du juste" value="" />
-                    <Picker.Item label="Gantelet givrant" value="" />
-                    <Picker.Item label="Coeur gelé" value="" />
-                    <Picker.Item label="Cape solaire" value="" />
-                    <Picker.Item label="Ange gardien" value="" />
-                    <Picker.Item label="GLP Hextech 800" value="" />
-                    <Picker.Item label="Rappel mortel" value="" />
-                    <Picker.Item label="Salutations de Dominik" value="" />
-                    <Picker.Item label="Visage spirituel" value="" />
-                    <Picker.Item label="Casque adaptatif" value="" />
-                    <Picker.Item label="Armure de Warmog" value="" />
-                    <Picker.Item label="Cotte épineuse" value="" />
-                    <Picker.Item label="Au bout du rouleau" value="" />
-                    <Picker.Item label="Lame spectre de Youmuu" value="" />
-                    <Picker.Item label="Présage de Randuin" value="" />
-                    <Picker.Item label="Epée vesperale de Draktharr" value="" />
-                    <Picker.Item label="Sablier de Zhonya" value="" />
-                    <Picker.Item label="Plaque du mort" value="" />
-                    <Picker.Item label="Manteau de la nuit" value="" />
-                    <Picker.Item label="Attrape-sorts" value="" />
-                    <Picker.Item label="Masque abyssal" value="" />
-                    <Picker.Item label="Couperet noir" value="" />
-                    <Picker.Item label="Voile de la banshee" value="" />
-                    <Picker.Item label="Dent de Nashor" value="" />
-                    <Picker.Item label="Morellonomicon" value="" />
-                    <Picker.Item label="Epée sanglante" value="" />
-                    <Picker.Item label="Maillet gelé" value="" />
-                    <Picker.Item label="Lame enreagée de Guinsoo" value="" />
-                    <Picker.Item label="Tourment de Liandry" value="" />
-                    <Picker.Item label="Etreinte de séraphin" value="" />
-                    <Picker.Item label="Gage de Sterak" value="" />
-                    <Picker.Item label="Lame tempête" value="" />
-                    <Picker.Item label="Fléau de liche" value="" />
-                    <Picker.Item label="Echo de Luden" value="" />
-                    <Picker.Item label="Guele de Malmortius" value="" />
-                    <Picker.Item label="Lame du roi déchu" value="" />
-                    <Picker.Item label="Faux spectrale" value="" />
-                    <Picker.Item label="Lame d'infini" value="" />
-                    <Picker.Item label="Cimetirre mercuriel" value="" />
-                    <Picker.Item label="Pistolame Hextech" value="" />
-                    <Picker.Item label="Soif-de-sang" value="" />
-                    <Picker.Item label="Hydre vorace" value="" />
-                    <Picker.Item label="Hydre titanesque" value="" />
-                    <Picker.Item label="Coiffe de Rabadon" value="" />
-                    <Picker.Item label="Danse de la mort" value="" />
-                    <Picker.Item label="Force de la trinité" value="" />
-                    <Picker.Item label="Jungle: item rouge, Pierre jaune" value="" />
-                    <Picker.Item label="Jungle: item rouge, Pierre rouge" value="" />
-                    <Picker.Item label="Jungle: item rouge, Pierre vert" value="" />
-                    <Picker.Item label="Jungle: item rouge, Pierre bleu" value="" />
-                    <Picker.Item label="Jungle: item bleu, Pierre jaune" value="" />
-                    <Picker.Item label="Jungle: item bleu, Pierre rouge" value="" />
-                    <Picker.Item label="Jungle: item bleu, Pierre vert" value="" />
-                    <Picker.Item label="Jungle: item bleu, Pierre bleu" value="" />
+                    <Picker.Item label="Bouclier relique" value="BouclierRelique" />
+                    <Picker.Item label="Faucille spectrale" value="FaucilleSpectrale" />
+                    <Picker.Item label="Garde epaules d'acier" value="GardeEpauleAcier" />
+                    <Picker.Item label="Lame du voleur de sorts" value="LameVoleurSorts" />
+                    <Picker.Item label="Botte de celerité" value="BotteCélérité" />
+                    <Picker.Item label="Botte de lucidité" value="BotteLucidité" />
+                    <Picker.Item label="Botte de mobilité" value="BotteMobilité" />
+                    <Picker.Item label="Sandales de mercure" value="SandalesMercure" />
+                    <Picker.Item label="Botte du berzerker" value="BotteBerzerker" />
+                    <Picker.Item label="Chaussures de sorcier" value="ChaussureSorcier" />
+                    <Picker.Item label="Tabi ninja" value="TabiNinja" />
+                    <Picker.Item label="Mejai" value="Mejai" />
+                    <Picker.Item label="Songe de Shurelya" value="SongeShurelya" />
+                    <Picker.Item label="Rédemption" value="Rédemption" />
+                    <Picker.Item label="Graal impie d'Athene" value="GraalImpieAthene" />
+                    <Picker.Item label="Creuset de Mikael" value="CreusetMikael" />
+                    <Picker.Item label="Voeu du chevalier" value="VoeuChevalier" />
+                    <Picker.Item label="Médaillon de l'Iron Solarie" value="MédaillonIronSolari" />
+                    <Picker.Item label="Convergence de Zeke" value="ConvergenceZeke" />
+                    <Picker.Item label="Encensoir Ardent" value="EncensoirArdent" />
+                    <Picker.Item label="Muramana" value="Muramana" />
+                    <Picker.Item label="Glaive d'ombre" value="GlaiveOmbre" />
+                    <Picker.Item label="Ombres Jumelles" value="OmbresJumelles" />
+                    <Picker.Item label="Protoceinture Hextech 01" value="ProtoceintureHextech" />
+                    <Picker.Item label="Lithoplastron de gargouille" value="LithoplastronGargouille" />
+                    <Picker.Item label="Baton séculaire" value="BatonSéculaire" />
+                    <Picker.Item label="Danseur fantome" value="DanseurFantome" />
+                    <Picker.Item label="Ouragan de Runaan" value="OuraganRunaan" />
+                    <Picker.Item label="Poignard de Statikk" value="PoignardStatikk" />
+                    <Picker.Item label="Canon ultrarapide" value="CanonUltrarapide" />
+                    <Picker.Item label="Sceptre de Rylai" value="SceptreRylai" />
+                    <Picker.Item label="Baton du vide" value="BatonVide" />
+                    <Picker.Item label="Gloire du juste" value="GloireJuste" />
+                    <Picker.Item label="Gantelet givrant" value="GanteletGivrant" />
+                    <Picker.Item label="Coeur gelé" value="CoeurGelé" />
+                    <Picker.Item label="Cape solaire" value="CapeSolaire" />
+                    <Picker.Item label="Ange gardien" value="AngeGardien" />
+                    <Picker.Item label="GLP Hextech 800" value="GLPHextech" />
+                    <Picker.Item label="Rappel mortel" value="RappelMortel" />
+                    <Picker.Item label="Salutations de Dominik" value="SalutationsDominik" />
+                    <Picker.Item label="Visage spirituel" value="VisageSpirituel" />
+                    <Picker.Item label="Casque adaptatif" value="CasqueAdaptatif" />
+                    <Picker.Item label="Armure de Warmog" value="ArmureWarmog" />
+                    <Picker.Item label="Cotte épineuse" value="CotteEpineuse" />
+                    <Picker.Item label="Au bout du rouleau" value="AuBoutDuRouleau" />
+                    <Picker.Item label="Lame spectre de Youmuu" value="LameYoumuu" />
+                    <Picker.Item label="Présage de Randuin" value="PrésageRanduin" />
+                    <Picker.Item label="Epée vesperale de Draktharr" value="EpeeDraktharr" />
+                    <Picker.Item label="Sablier de Zhonya" value="SablierZhonya" />
+                    <Picker.Item label="Plaque du mort" value="PlaqueDuMort" />
+                    <Picker.Item label="Manteau de la nuit" value="ManteauNuit" />
+                    <Picker.Item label="Attrape-sorts" value="AttrapeSorts" />
+                    <Picker.Item label="Masque abyssal" value="MasqueAbyssal" />
+                    <Picker.Item label="Couperet noir" value="CouperetNoir" />
+                    <Picker.Item label="Voile de la banshee" value="VoileBanshee" />
+                    <Picker.Item label="Dent de Nashor" value="DentNashor" />
+                    <Picker.Item label="Morellonomicon" value="Morellonomicon" />
+                    <Picker.Item label="Epée sanglante" value="EpeeSanglante" />
+                    <Picker.Item label="Maillet gelé" value="MailletGelé" />
+                    <Picker.Item label="Lame enragée de Guinsoo" value="LameGuinsoo" />
+                    <Picker.Item label="Tourment de Liandry" value="TourmentLiandry" />
+                    <Picker.Item label="Etreinte de séraphin" value="EtreinteSéraphin" />
+                    <Picker.Item label="Gage de Sterak" value="GageSterak" />
+                    <Picker.Item label="Lame tempête" value="LameTempete" />
+                    <Picker.Item label="Fléau de liche" value="FleauLiche" />
+                    <Picker.Item label="Echo de Luden" value="EchoLuden" />
+                    <Picker.Item label="Guele de Malmortius" value="GueleMalmortius" />
+                    <Picker.Item label="Lame du roi déchu" value="LameRoiDéchu" />
+                    <Picker.Item label="Faux spectrale" value="FauxSpectrale" />
+                    <Picker.Item label="Lame d'infini" value="LameInfini" />
+                    <Picker.Item label="Cimeterre mercuriel" value="CimeterreMercuriel" />
+                    <Picker.Item label="Pistolame Hextech" value="PistolameHextech" />
+                    <Picker.Item label="Soif-de-sang" value="SoifDeSang" />
+                    <Picker.Item label="Hydre vorace" value="HydreVorace" />
+                    <Picker.Item label="Hydre titanesque" value="HydreTitanesque" />
+                    <Picker.Item label="Coiffe de Rabadon" value="CoiffeRabadon" />
+                    <Picker.Item label="Danse de la mort" value="DanseMort" />
+                    <Picker.Item label="Force de la trinité" value="ForceTrinité" />
+                    <Picker.Item label="Jungle: item rouge, Pierre jaune" value="JungleRougeJaune" />
+                    <Picker.Item label="Jungle: item rouge, Pierre rouge" value="JungleRougeRouge" />
+                    <Picker.Item label="Jungle: item rouge, Pierre vert" value="JungleRougeVert" />
+                    <Picker.Item label="Jungle: item rouge, Pierre bleu" value="JungleRougeBleu" />
+                    <Picker.Item label="Jungle: item bleu, Pierre jaune" value="JungleBleuJaune" />
+                    <Picker.Item label="Jungle: item bleu, Pierre rouge" value="JungleBleuRouge" />
+                    <Picker.Item label="Jungle: item bleu, Pierre vert" value="JungleBleuVert" />
+                    <Picker.Item label="Jungle: item bleu, Pierre bleu" value="JungleBleuBleu" />
                 </Picker>
 
 
