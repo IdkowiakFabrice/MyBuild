@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         height: 35,
         resizeMode: 'contain',
         position: 'absolute',
-        right: 0,
-        top: 15
+        right: 5,
+        top: 10
     },
 })

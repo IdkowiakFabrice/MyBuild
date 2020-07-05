@@ -7,14 +7,21 @@ export default function Header() {
 
         return (
             <View style={styles.header}>
-                <TouchableOpacity style={styles.touch}
+                <TouchableOpacity style={styles.back}
                 onPress={() => navigation.navigate('ChampionsListPage')}>
                 <Image
-                    style={styles.touch}
+                    style={styles.back}
                     source={require('../../assets/back.png')}
                 />
-            </TouchableOpacity>
-            <Text style= {styles.headerText}>MyBuild</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.disc}
+                onPress={() => navigation.navigate('Accueil')}>
+                <Image
+                    style={styles.disc}
+                    source={require('../../assets/dc.png')}
+                />
+                </TouchableOpacity>
+            <Text style= {styles.headerText}></Text>
             </View>
         )
     }
@@ -31,13 +38,22 @@ const styles = StyleSheet.create({
     headerText: {
         color: '#bf8d3a',
     },
-    touch:{
+    back:{
         flex: 0,
         width: 35,
         height: 35,
         resizeMode: 'contain',
         position: 'absolute',
-        right: 0,
-        top: 15
+        left: 0,
+        top: 10
+    },
+    disc:{
+        flex: 0,
+        width: 35,
+        height: 35,
+        resizeMode: 'contain',
+        position: 'absolute',
+        right: 5,
+        top: 10
     },
 })

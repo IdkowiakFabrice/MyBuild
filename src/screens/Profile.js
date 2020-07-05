@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground, Image  } from 'react-native'
 import * as axios from 'axios'
 
-import HeaderP from '../components/HeaderP'
+import Header from '../components/HeaderP'
 
 const{width: WIDTH} = Dimensions.get('window') 
 class Profile extends Component{
@@ -92,7 +92,8 @@ class Profile extends Component{
     return (
         <ImageBackground source={require('../../assets/profile.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
         <View  style={{width: '100%'}}>
-            <HeaderP />
+            <Header />
+            </View>
         <View style={styles.container}>
             <Text style={styles.text}>Profil</Text>
             <TextInput
@@ -139,7 +140,6 @@ class Profile extends Component{
                 >
                 <Text style={styles.buttonTextSave}>Sauvegarder</Text>
             </TouchableOpacity>
-        </View>
         </View>
         </ImageBackground>
     )

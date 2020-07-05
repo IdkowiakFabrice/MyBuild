@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage  } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground  } from 'react-native'
 import * as axios from 'axios'
 
-import Header from '../components/Header'
+import Header from '../components/HeaderR'
 
 
 const{width: WIDTH} = Dimensions.get('window')
@@ -38,18 +38,20 @@ class RegisterSuccess extends Component{
 
     render() {
         return(
+            <ImageBackground source={require('../../assets/accueil.jpg')} style={{width: '100%', height: '100%',flex:1}}>
             <View  style={{width: '100%'}}>
                 <Header />
                 <View style = {styles.container}>
-
                 <Text style = {styles.text}>Inscription réussie!</Text>
-                <Text>Bienvenue: { this.state.username }</Text>
+                <Text style = {styles.uText}>Bienvenue: { this.state.username }</Text>
                 <TouchableOpacity
+                style={styles.buttonReturnContainer}
                 onPress={() => this.props.navigation.navigate('Login')}>
-                <Text style={styles.signUpText}>Retour</Text>
+                <Text style={styles.buttonText}>Retour</Text>
             </TouchableOpacity>
             </View>
          </View>
+         </ImageBackground>
         )
     }
 }
@@ -60,23 +62,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     text: {
-        color: '#101010',
+        color: '#bf8d3a',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom:30,
+        marginTop:'5%'
     },
     buttonContainer: {
-        backgroundColor: '#222',
+        backgroundColor: '#bf8d3a',
         borderRadius: 5,
         padding: 10,
         margin: 20
     },
-    buttonTextLogin: {
-        fontSize: 20,
-        color: 'orange'
+    uText: {
+        color: '#bf8d3a',
+        marginTop: '80%',
+
     },
-    SignUpText: {
-        color: 'orange',
+    buttonText: {
+        color: '#bf8d3a',
+
     },
     input: {
         width: WIDTH -55,
@@ -85,10 +90,19 @@ const styles = StyleSheet.create({
         fontSize: 16,
         paddingLeft: 45,
         backgroundColor:'rgba(0,0,0,0.35)',
-        color:'rgba(255,255,255,0.7)',
+        color:'#bf8d3a',
         marginHorizontal: 25,
         marginBottom: 20,
-    }
+    },
+    buttonReturnContainer :{
+        backgroundColor: '#010a13',
+        color:'#bf8d3a',
+        borderRadius: 5,
+        padding: 10,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#bf8d3a',
+        }
 })
 
 export default RegisterSuccess
