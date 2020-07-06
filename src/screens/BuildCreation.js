@@ -3,11 +3,10 @@ import { Text, View, StyleSheet, Picker, ScrollView, AsyncStorage, ImageBackgrou
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as axios from 'axios'
 
-import Header from '../components/Header'
+import Header from '../components/HeaderL'
 import {RUNESIDBYNAME} from '../utils/Runes'
 import {SUMMSIDBYNAME} from '../utils/Summs'
 import {ITEMSIDBYNAME} from '../utils/Items'
-import { white } from 'react-native-paper';
 
 export default class BuildCreation extends Component {
     constructor(props) {
@@ -256,14 +255,13 @@ export default class BuildCreation extends Component {
                 'Authorization': 'Bearer ' + this.state.token
             }
         };
-        console.log(newBuild)
         axios.post('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/build', newBuild, axiosConfig)
         .then(() => {
-            console.log('OUI')
             this.props.navigation.navigate('ChampionsListPage')
         })
         .catch((error) => {
           console.log(error)
+          // à mettre en front
         });
       }
      
@@ -281,7 +279,7 @@ export default class BuildCreation extends Component {
                 {/* item 1 */}
                 <View style={styles.inputstyle}>
                 <Picker
-                style={{color:'white'}}
+                style={{color:'#bf8d3a'}}
                 onValueChange={(itemValue) =>  this.setState({item1: itemValue})}
                 >
                     <Picker.Item label={this.state.item1} value="" />
@@ -1357,11 +1355,11 @@ export default class BuildCreation extends Component {
                     <Picker.Item label="Embrasement" value="Embrasement" />
                 </Picker>
                 </View>
-                <TouchableOpacity
-                style={styles.inputstyle}
-                onPress={() => this._submit()}>
-                    <Text>SUBMIT</Text>
-                </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.buttonReturnContainer}
+                        onPress={() => this.props.navigation.navigate('BuildCreaction')}>
+                        <Text style={styles.buttonText}>Ajouter un build</Text>
+                    </TouchableOpacity>
             </ScrollView>
             </View>
             </ImageBackground>
@@ -1383,7 +1381,10 @@ const styles = StyleSheet.create({
         borderColor: '#bf8d3a',
         height: 40,
         width: 320,
-        color:'white'
+        color:'#bf8d3a',
+        alignContent: 'center',
+        alignSelf: 'center'
+
     },
     inputstyleJ: {
         borderRadius: 5,
@@ -1424,5 +1425,21 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor: '#2ff1ff',
         color:'#2ff1ff'
+    },
+    buttonReturnContainer :{
+        backgroundColor: '#010a13',
+        color:'#bf8d3a',
+        borderRadius: 5,
+        padding: 10,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#bf8d3a',
+        alignContent: 'center',
+        alignSelf : 'center',
+        width : "40%"
+    },
+    buttonText: {
+        color: '#bf8d3a',
+        textAlign : 'center'
     },
 })

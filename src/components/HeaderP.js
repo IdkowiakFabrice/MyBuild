@@ -8,10 +8,17 @@ export default function Header() {
         return (
             <View style={styles.header}>
                 <TouchableOpacity style={styles.back}
-                onPress={() => navigation.navigate('ChampionsListPage')}>
+                onPress={() => navigation.goBack() }>
                 <Image
                     style={styles.back}
                     source={require('../../assets/back.png')}
+                />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.lol}
+                onPress={() => navigation.navigate('ChampionsListPage')}>
+                <Image
+                    style={styles.lol}
+                    source={require('../../assets/lol.png')}
                 />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.disc}
@@ -55,5 +62,15 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 5,
         top: 10
+    },
+    lol:{
+        flex: 0,
+        width: 35,
+        height: 35,
+        resizeMode: 'contain',
+        position: 'absolute',
+        alignContent : "center",
+        top: 10,
+        left : '48%'
     },
 })

@@ -24,8 +24,6 @@ class Profile extends Component{
         try {
             const token = await AsyncStorage.getItem('@token');
             const idUser = await AsyncStorage.getItem('@idUser');
-            console.log('token:%s', token)
-            console.log('userid:%s', idUser)
             if (idUser !== null) {
               this.setState({ idUser })
             }
@@ -48,7 +46,6 @@ class Profile extends Component{
         };
         axios.get("https://mybuild-api.herokuapp.com/api/users/" + idUser, axiosConfig)
         .then((response) => {
-            console.log(response.data.data.user)
             let user = response.data.data.user
             this.setState({firstname:user.firstname})
             this.setState({lastname:user.lastname})
@@ -57,6 +54,7 @@ class Profile extends Component{
           })
           .catch((error) => {
             console.log(error)
+            // à mettre en front
           });
       }
       
@@ -82,6 +80,7 @@ class Profile extends Component{
         })
         .catch((error) => {
             console.log(error);
+            // à mettre en front
         });
     }
     }
@@ -173,7 +172,8 @@ const styles = StyleSheet.create({
         color: 'rgba(255,255,255,1)',
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom:30,
+        marginBottom:"10%",
+        marginTop: '10%'
     },
     buttonContainer: {
         backgroundColor: 'rgba(20,20,20,1)',

@@ -47,6 +47,7 @@ class Register extends Component{
         })
         .catch((error) => {
             console.log(error);
+            // à mettre en front
         });
     }
     

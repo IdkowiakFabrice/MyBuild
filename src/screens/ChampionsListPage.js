@@ -21,16 +21,12 @@ export default class Accueil extends Component {
         try {
             const token = await AsyncStorage.getItem('@token');
             const idUser = await AsyncStorage.getItem('@idUser');
-            console.log('token:%s', token)
-            console.log('userid:%s', idUser)
             if (idUser !== null) {
               this.setState({ idUser })
             }
             if (token !== null) {
                 this.setState({ token })
-            }
-            //this._getMarker(idUser, token)
-    
+            }    
         } catch (error) {
             console.error(error);
         }

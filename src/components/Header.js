@@ -40,4 +40,13 @@ const styles = StyleSheet.create({
         right: 5,
         top: 10
     },
+    disc:{
+        flex: 0,
+        width: 35,
+        height: 35,
+        resizeMode: 'contain',
+        position: 'absolute',
+        right: 5,
+        top: 10
+    },
 })

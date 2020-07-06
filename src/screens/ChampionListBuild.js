@@ -46,7 +46,6 @@ export default class ChampionListBuild extends Component {
               this.setState({ idUser })
             }
             if (token !== null) {
-                console.log(token)
                 this.setState({ token })
             }
             if (idChamp !== null) {
@@ -71,10 +70,11 @@ export default class ChampionListBuild extends Component {
         axios.get('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/buildByChamp/'+ this.state.idChamp, axiosConfig)
         .then((response) => {
             this.setState({builds : response.data})
-            //console.log(this.state.builds[2].sum1)
         })
         .catch((error) => {
           console.log(error)
+          // à mettre en front
+          
         });
       }
       
@@ -193,9 +193,7 @@ export default class ChampionListBuild extends Component {
                         style={styles.buttonReturnContainer}
                         onPress={() => this.props.navigation.navigate('BuildCreaction')}>
                         <Text style={styles.buttonText}>Ajouter un build</Text>
-                    </TouchableOpacity>
-                    {this.state.builds !== '' ?this.renderBuild() : null}
-                    
+                    </TouchableOpacity>                    
                 </ScrollView>
             </View>
             </ImageBackground>
