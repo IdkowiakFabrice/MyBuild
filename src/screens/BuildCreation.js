@@ -259,6 +259,7 @@ export default class BuildCreation extends Component {
         axios.post('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/build', newBuild, axiosConfig)
         .then(() => {
             console.log('OUI')
+            this.props.navigation.navigate('ChampionsListPage')
         })
         .catch((error) => {
           console.log(error)
