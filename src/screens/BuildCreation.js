@@ -190,31 +190,31 @@ export default class BuildCreation extends Component {
 
         RUNESIDBYNAME.map(function(rune){
             if(rp1 === rune.id){
-                rp1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp2 === rune.id){
-                rp2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp3 === rune.id){
-                rp3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp4 === rune.id){
-                rp4 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp4 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rs1 === rune.id){
-                rs1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rs1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rs2 === rune.id){
-                rs2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rs2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt1 === rune.id){
-                rt1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt2 === rune.id){
-                rt2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt3 === rune.id){
-                rt3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
         })
 
@@ -247,7 +247,7 @@ export default class BuildCreation extends Component {
             "rt1":rt1,
             "rt2":rt2,
             "rt3":rt3,
-            "commentaire": '',
+            "commentaire": 'test',
         }
         let axiosConfig = {
             headers: {

@@ -45,10 +45,10 @@ class RegisterSuccess extends Component{
                 <Text style = {styles.text}>Inscription réussie!</Text>
                 <Text style = {styles.uText}>Bienvenue: { this.state.username }</Text>
                 <TouchableOpacity
-                style={styles.buttonReturnContainer}
-                onPress={() => this.props.navigation.navigate('Login')}>
+                    style={styles.buttonReturnContainer}
+                    onPress={() => this.props.navigation.navigate('Login')}>
                 <Text style={styles.buttonText}>Retour</Text>
-            </TouchableOpacity>
+                </TouchableOpacity>
             </View>
          </View>
          </ImageBackground>

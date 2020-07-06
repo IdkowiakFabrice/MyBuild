@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, Image, AsyncStorage, StyleSheet } from 'react-native'
+import { Text, View, ScrollView, Image, AsyncStorage, StyleSheet, ImageBackground } from 'react-native'
 import { CHAMPIONBYID } from '../utils/ChampionObject'
-import Header from '../components/Header'
+import Header from '../components/HeaderL'
 import * as axios from 'axios'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -92,66 +92,112 @@ export default class ChampionListBuild extends Component {
       }
 
       renderBuild(){
-          return this.state.builds.map(build => {
-              return(
-                <View>
+        return this.state.builds.map(build => {
+            return(
+            <View style = {styles.container}>
+              <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item1}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item1}}
+                  />
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item2}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item2}}
+                  />
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item3}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item3}}
+                  />
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item4}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item4}}
+                  />
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item5}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item5}}
+                  />
                   <Image
-                    style={{flexDirection: 'row', width:20, height:20}}
-                    source={{uri : build.item6}}
-                />
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.item6}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2, marginLeft: 15}}
+                      source={{uri : build.sum1}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      source={{uri : build.sum2}}
+                  />
                 </View>
-              )
-          })
-      }
+                <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rp1}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rp2}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rp3}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rp4}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rs1}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rs2}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rt1}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rt2}}
+                  />
+                  <Image
+                      style={{flexDirection: 'row', width:40, height:40}}
+                      source={{uri : build.rt3}}
+                  />
+                </View>
+              </View>
+            )
+        })
+    }  
 
     componentDidMount(){
         this._retrieveData()
     }
     render() {
         return (
-            <View>
-                <Header />
+            <ImageBackground source={require('../../assets/bg.jpg')} style={{width: '100%', height: '100%',flex:1, flexDirection:'row'}}>
+            <View  style={{width: '100%'}}>               
+             <Header />
                 <ScrollView>
                     <View style={styles.iconChamp}>
                     <Image
                     style={{flexDirection: 'row', width:100, height:100}}
                     source={{uri : this.state.imageChamp}}
                     />
-                    </View>
                     <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
-                    <Image
-                    style={{flexDirection: 'row', width:100, height:100}}
-                        source={{uri : 'https://raw.githubusercontent.com/YanisRili/MyBuild_Summs/master/summs/01.PNG'}}
-                    />
+
+                    </View>
                     {this.state.builds !== '' ?this.renderBuild() : null}
                     <TouchableOpacity
-                        onPress={() => this._navigate()}
-                        style={styles.buttonContainer}
-                        >
-                            <Text>+ Ajouter un build</Text>
+                        style={styles.buttonReturnContainer}
+                        onPress={() => this.props.navigation.navigate('BuildCreaction')}>
+                        <Text style={styles.buttonText}>Ajouter un build</Text>
                     </TouchableOpacity>
                 </ScrollView>
             </View>
+            </ImageBackground>
         )
     }
 }
@@ -171,6 +217,34 @@ const styles = StyleSheet.create({
         backgroundColor: 'green',
         borderRadius: 5,
 
-    }
+    },
+    buttonReturnContainer :{
+        backgroundColor: '#010a13',
+        color:'#bf8d3a',
+        borderRadius: 5,
+        padding: 10,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#bf8d3a',
+        alignContent: 'center',
+        alignSelf : 'center',
+        width : "40%"
+    },
+    buttonText: {
+        color: '#bf8d3a',
+        textAlign : 'center'
 
+    },
+    container :{
+        backgroundColor: '#010a13',
+        borderRadius: 5,
+        padding : 10,
+        marginTop :20,
+        justifyContent: 'center',
+        borderWidth:1,
+        borderColor: '#bf8d3a',
+        marginLeft : 20,
+        marginRight : 20
+
+    },
 })
