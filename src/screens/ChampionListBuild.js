@@ -187,7 +187,6 @@ export default class ChampionListBuild extends Component {
                     source={{uri : this.state.imageChamp}}
                     />
                     <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
-
                     </View>
                     {this.state.builds !== '' ?this.renderBuild() : null}
                     <TouchableOpacity
@@ -195,6 +194,8 @@ export default class ChampionListBuild extends Component {
                         onPress={() => this.props.navigation.navigate('BuildCreaction')}>
                         <Text style={styles.buttonText}>Ajouter un build</Text>
                     </TouchableOpacity>
+                    {this.state.builds !== '' ?this.renderBuild() : null}
+                    
                 </ScrollView>
             </View>
             </ImageBackground>
