@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, Dimensions, AsyncStorage, ImageBackground } from 'react-native'
 import * as axios from 'axios'
 
-import Header from '../components/Header'
-
 
 const{width: WIDTH} = Dimensions.get('window') 
 
