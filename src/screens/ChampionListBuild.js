@@ -97,73 +97,73 @@ export default class ChampionListBuild extends Component {
             <View style = {styles.container}>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item1}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item2}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item3}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item4}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item5}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.item6}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2, marginLeft: 15}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2, marginLeft: 15}}
                       source={{uri : build.sum1}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40, margin : 2}}
+                      style={{flexDirection: 'row', width:30, height:30, margin : 2}}
                       source={{uri : build.sum2}}
                   />
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rp1}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rp2}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rp3}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rp4}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rs1}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rs2}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rt1}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rt2}}
                   />
                   <Image
-                      style={{flexDirection: 'row', width:40, height:40}}
+                      style={{flexDirection: 'row', width:30, height:30}}
                       source={{uri : build.rt3}}
                   />
                 </View>
