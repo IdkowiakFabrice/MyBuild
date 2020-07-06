@@ -191,31 +191,31 @@ export default class BuildCreation extends Component {
 
         RUNESIDBYNAME.map(function(rune){
             if(rp1 === rune.id){
-                rp1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp2 === rune.id){
-                rp2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp3 === rune.id){
-                rp3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rp4 === rune.id){
-                rp4 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rp4 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rs1 === rune.id){
-                rs1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rs1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rs2 === rune.id){
-                rs2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rs2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt1 === rune.id){
-                rt1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt1 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt2 === rune.id){
-                rt2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt2 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
             if(rt3 === rune.id){
-                rt3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.PNG'
+                rt3 = 'https://raw.githubusercontent.com/YanisRili/MyBuild_Runes/master/runes_all/' + rune.name + '.png'
             }
         })
 
@@ -248,7 +248,7 @@ export default class BuildCreation extends Component {
             "rt1":rt1,
             "rt2":rt2,
             "rt3":rt3,
-            "commentaire": '',
+            "commentaire": 'test',
         }
         let axiosConfig = {
             headers: {
@@ -260,6 +260,7 @@ export default class BuildCreation extends Component {
         axios.post('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/build', newBuild, axiosConfig)
         .then(() => {
             console.log('OUI')
+            this.props.navigation.navigate('ChampionsListPage')
         })
         .catch((error) => {
           console.log(error)
@@ -943,7 +944,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label={this.state.rp3} value="" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                     </Picker>
 
                     <Picker
@@ -966,7 +967,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
-                        <Picker.Item label="Invocation d'Aery" value="InvocationDAery" />
+                        <Picker.Item label="Invocation d'Aery" value="InvocationAery" />
                         <Picker.Item label="Comète Arcanique" value="ComèteArcanique" />
                         <Picker.Item label="Rush Phasique" value="RushPhasique" />                        
                     </Picker> 
@@ -1055,7 +1056,7 @@ export default class BuildCreation extends Component {
                         >
                         <Picker.Item label={this.state.rp1} value="" />
                         <Picker.Item label="Optimisation Glaciale" value="OptimisationGlaciale" />
-                        <Picker.Item label="Grimoire Déchaîné" value="GrimoireDéchaîné" />
+                        <Picker.Item label="Grimoire Déchaîné" value="GrimoireDéchainé" />
                         <Picker.Item label="Prototype Omnipierre" value="PrototypeOmnipierre" />                        
                     </Picker> 
 
@@ -1064,7 +1065,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
-                        <Picker.Item label="Canaliportation Hextech" value="CanaliportaionHextech" />   
+                        <Picker.Item label="Canaliportation Hextech" value="CanaliportationHextech" />   
                         <Picker.Item label="Chaussures Magiques" value="ChaussuresMagiques" />
                         <Picker.Item label="Timing Parfait" value="TimingParfait" />
                     </Picker>
@@ -1153,7 +1154,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Ruée Offensive" value="RuéeOffensive" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                         <Picker.Item label="Chasseur Vorace" value="ChasseurVorace" />
                         <Picker.Item label="Chasseur Ingénieux" value="ChasseurIngénieux" />
                         <Picker.Item label="Chasseur Acharné" value="ChasseurAcharné" />
@@ -1169,7 +1170,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Ruée Offensive" value="RuéeOffensive" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                         <Picker.Item label="Chasseur Vorace" value="ChasseurVorace" />
                         <Picker.Item label="Chasseur Ingénieux" value="ChasseurIngénieux" />
                         <Picker.Item label="Chasseur Acharné" value="ChasseurAcharné" />
@@ -1224,8 +1225,8 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Fontaine de Vie" value="FontaineDeVie" />
                         <Picker.Item label="Coup de Bouclier" value="CoupDeBouclier" />     
                         <Picker.Item label="Conditionnement" value="Conditionnement" />
-                        <Picker.Item label="Second Souffle" value="Second Souffle" />
-                        <Picker.Item label="Plaque D'Os" value="PlaqueDOs" />   
+                        <Picker.Item label="Second Souffle" value="SecondSouffle" />
+                        <Picker.Item label="Plaque D'Os" value="PlaqueDos" />   
                         <Picker.Item label="Surcroissance" value="Surcroissance" />
                         <Picker.Item label="Revitalisation" value="Revitalisation" />
                         <Picker.Item label="Inébranlable" value="Inébranlable" />        
@@ -1239,8 +1240,8 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Fontaine de Vie" value="FontaineDeVie" />
                         <Picker.Item label="Coup de Bouclier" value="CoupDeBouclier" />     
                         <Picker.Item label="Conditionnement" value="Conditionnement" />
-                        <Picker.Item label="Second Souffle" value="Second Souffle" />
-                        <Picker.Item label="Plaque D'Os" value="PlaqueDOs" />   
+                        <Picker.Item label="Second Souffle" value="SecondSouffle" />
+                        <Picker.Item label="Plaque D'Os" value="PlaqueDos" />   
                         <Picker.Item label="Surcroissance" value="Surcroissance" />
                         <Picker.Item label="Revitalisation" value="Revitalisation" />
                         <Picker.Item label="Inébranlable" value="Inébranlable" />        
@@ -1270,7 +1271,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
-                        <Picker.Item label="Canaliportation Hextech" value="CanaliportaionHextech" />   
+                        <Picker.Item label="Canaliportation Hextech" value="CanaliportationHextech" />   
                         <Picker.Item label="Chaussures Magiques" value="ChaussuresMagiques" />
                         <Picker.Item label="Timing Parfait" value="TimingParfait" />
                         <Picker.Item label="Marché du Futur" value="MarchéDuFutur" />
@@ -1290,7 +1291,7 @@ export default class BuildCreation extends Component {
                     onValueChange={(itemValue) =>  this.setState({rt1:itemValue })}
                     >
                     <Picker.Item label={this.state.rt1} value="" />
-                    <Picker.Item label="Degat" value="degat" />
+                    <Picker.Item label="Dégat" value="Dégat" />
                     <Picker.Item label="Rapidité d'attaque" value="AS" />
                     <Picker.Item label="Reduction des delais" value="CDR" />
                 </Picker>
@@ -1301,7 +1302,7 @@ export default class BuildCreation extends Component {
                     onValueChange={(itemValue) =>  this.setState({rt2:itemValue })}
                     >
                     <Picker.Item label={this.state.rt2} value="" />
-                    <Picker.Item label="Degat" value="degat" />
+                    <Picker.Item label="Dégat" value="Dégat" />
                     <Picker.Item label="Armure" value="Armor" />
                     <Picker.Item label="Resistance magique" value="MR" />
                 </Picker>
