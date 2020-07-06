@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import {RUNESIDBYNAME} from '../utils/Runes'
 import {SUMMSIDBYNAME} from '../utils/Summs'
 import {ITEMSIDBYNAME} from '../utils/Items'
+import { white } from 'react-native-paper';
 
 export default class BuildCreation extends Component {
     constructor(props) {
@@ -269,12 +270,15 @@ export default class BuildCreation extends Component {
           this._retrieveData()
       }
     render() {
+
         return (
-            <ScrollView>
-                <Header />
+        <View  style={{width: '100%'}}>
+        <Header />
+        <ScrollView style={{backgroundColor: '#010a13'}}>
+                
                 {/* item 1 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item1: itemValue})}
                 >
                     <Picker.Item label={this.state.item1} value="" />
@@ -368,7 +372,7 @@ export default class BuildCreation extends Component {
                 
                 {/* item 2 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item2: itemValue})}
                 >
                     <Picker.Item label={this.state.item2} value="" />
@@ -462,7 +466,7 @@ export default class BuildCreation extends Component {
                 
                 {/* item 3 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item3: itemValue})}
                 >
                      <Picker.Item label={this.state.item3} value="" />
@@ -556,7 +560,7 @@ export default class BuildCreation extends Component {
                 
                 {/* item 4 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item4: itemValue})}
                 >
                     <Picker.Item label={this.state.item4} value="" />
@@ -650,7 +654,7 @@ export default class BuildCreation extends Component {
                 
                 {/* item 5 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item5: itemValue})}
                 >
                     <Picker.Item label={this.state.item5} value="" />
@@ -744,7 +748,7 @@ export default class BuildCreation extends Component {
                 
                 {/* item 6 */}
                 <Picker
-                style={{ height: 50, width: 200, }}
+                style={styles.inputstyle}
                 onValueChange={(itemValue) =>  this.setState({item6: itemValue})}
                 >
                     <Picker.Item label={this.state.item6} value="" />
@@ -839,7 +843,7 @@ export default class BuildCreation extends Component {
 
                 {/* Arbre PRINCIPALE */}
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this._whoIsVisible(itemValue)}
                     >
                     <Picker.Item label="Arbre Principal" value="" />
@@ -853,7 +857,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleJaune ? 
                     <View>
                         <Picker
-                            style={{ height: 50, width: 150 }}
+                            style={styles.inputstyleJ}
                             onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                             >
                             <Picker.Item label={this.state.rp1} value="" />
@@ -864,7 +868,7 @@ export default class BuildCreation extends Component {
                         </Picker> 
 
                         <Picker
-                            style={{ height: 50, width: 150 }}
+                            style={styles.inputstyleJ}
                             onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                             >
                             <Picker.Item label={this.state.rp2} value="" />
@@ -874,7 +878,7 @@ export default class BuildCreation extends Component {
                         </Picker>
 
                         <Picker
-                            style={{ height: 50, width: 150 }}
+                            style={styles.inputstyleJ}
                             onValueChange={(itemValue) => this.setState({rp3:itemValue})}
                             >
                             <Picker.Item label={this.state.rp3} value="" />
@@ -884,7 +888,7 @@ export default class BuildCreation extends Component {
                         </Picker>
 
                         <Picker
-                            style={{ height: 50, width: 150 }}
+                            style={styles.inputstyleJ}
                             onValueChange={(itemValue) => this.setState({rp4:itemValue})}
                             >
                             <Picker.Item label={this.state.rp4} value="" />
@@ -898,7 +902,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleRouge ? 
                     <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
@@ -909,7 +913,7 @@ export default class BuildCreation extends Component {
                     </Picker> 
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
@@ -919,7 +923,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rp3:itemValue})}
                         >
                         <Picker.Item label={this.state.rp3} value="" />
@@ -929,7 +933,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rp4:itemValue})}
                         >
                         <Picker.Item label={this.state.rp4} value="" />
@@ -944,7 +948,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleBleu ? 
                     <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
@@ -954,7 +958,7 @@ export default class BuildCreation extends Component {
                     </Picker> 
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
@@ -964,7 +968,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rp3:itemValue})}
                         >
                         <Picker.Item label={this.state.rp3} value="" />
@@ -974,7 +978,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rp4:itemValue})}
                         >
                         <Picker.Item label={this.state.rp4} value="" />
@@ -988,7 +992,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleVert ? 
                     <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
@@ -998,7 +1002,7 @@ export default class BuildCreation extends Component {
                     </Picker> 
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
@@ -1008,7 +1012,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rp3:itemValue})}
                         >
                         <Picker.Item label={this.state.rp3} value="" />
@@ -1018,7 +1022,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rp4:itemValue})}
                         >
                         <Picker.Item label={this.state.rp4} value="" />
@@ -1032,7 +1036,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleCyan ? 
                     <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
@@ -1042,7 +1046,7 @@ export default class BuildCreation extends Component {
                     </Picker> 
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
@@ -1052,7 +1056,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rp3:itemValue})}
                         >
                         <Picker.Item label={this.state.rp3} value="" />
@@ -1062,7 +1066,7 @@ export default class BuildCreation extends Component {
                     </Picker>
 
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rp4:itemValue})}
                         >
                         <Picker.Item label={this.state.rp4} value="" />
@@ -1075,7 +1079,7 @@ export default class BuildCreation extends Component {
 
                 {/* Arbre SECONDAIRE */}
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this._whoIsVisible2(itemValue)}
                     >
                     <Picker.Item label="Arbre Secondaire" value="" />
@@ -1089,7 +1093,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleJauneSec && !this.state.isVisibleJaune ? 
                 <View>
                     <Picker
-                        style={{ height: 50, width: 200, }}
+                        style={styles.inputstyleJ}
                         onValueChange={(itemValue) => this.setState({rs1:itemValue})}
                         >
                         <Picker.Item label={this.state.rs1} value="" />
@@ -1104,7 +1108,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Barroud d'Honneur" value="BarroudHonneur" />
                     </Picker>
                     <Picker
-                        style={{ height: 50, width: 200, }}
+                        style={styles.inputstyleJ}
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
@@ -1124,7 +1128,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleRougeSec && !this.state.isVisibleRouge ? 
                 <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rs1:itemValue})}
                         >
                         <Picker.Item label={this.state.rs1} value="" />
@@ -1140,7 +1144,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Chasseur Ultime" value="ChasseurUltime" />
                     </Picker>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                       style={styles.inputstyleR}
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
@@ -1161,7 +1165,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleBleuSec && !this.state.isVisibleBleu ? 
                 <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rs1:itemValue})}
                         >
                         <Picker.Item label={this.state.rs1} value="" />
@@ -1176,7 +1180,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Tempête Menaçante" value="TempêteMenaçante" />
                     </Picker>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleB}
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
@@ -1196,7 +1200,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleVertSec && !this.state.isVisibleVert ? 
                 <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rs1:itemValue})}
                         >
                         <Picker.Item label={this.state.rs1} value="" />
@@ -1211,7 +1215,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Inébranlable" value="Inébranlable" />        
                     </Picker>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleV}
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
@@ -1231,7 +1235,7 @@ export default class BuildCreation extends Component {
                 {this.state.isVisibleCyanSec && !this.state.isVisibleCyan ? 
                 <View>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rs1:itemValue})}
                         >
                         <Picker.Item label={this.state.rs1} value="" />
@@ -1246,7 +1250,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Philtre de Chronodistorsion" value="PhiltreDeChronodistorsion" />
                     </Picker>
                     <Picker
-                        style={{ height: 50, width: 150 }}
+                        style={styles.inputstyleC}
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
@@ -1265,7 +1269,7 @@ export default class BuildCreation extends Component {
 
                 {/* Arbre TERCIAIRE */}
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this.setState({rt1:itemValue })}
                     >
                     <Picker.Item label={this.state.rt1} value="" />
@@ -1274,7 +1278,7 @@ export default class BuildCreation extends Component {
                     <Picker.Item label="Reduction des delais" value="CDR" />
                 </Picker>
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this.setState({rt2:itemValue })}
                     >
                     <Picker.Item label={this.state.rt2} value="" />
@@ -1283,7 +1287,7 @@ export default class BuildCreation extends Component {
                     <Picker.Item label="Resistance magique" value="MR" />
                 </Picker>
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this.setState({rt3:itemValue })}
                     >
                     <Picker.Item label={this.state.rt3} value="" />
@@ -1294,7 +1298,7 @@ export default class BuildCreation extends Component {
 
                 {/* SUMMONER 1 */}
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this.setState({sum1:itemValue })}
                     >
                     <Picker.Item label={this.state.sum1} value="" />
@@ -1312,7 +1316,7 @@ export default class BuildCreation extends Component {
                 
                 {/* SUMMONER 2 */}
                 <Picker
-                    style={{ height: 50, width: 200, }}
+                    style={styles.inputstyle}
                     onValueChange={(itemValue) =>  this.setState({sum2:itemValue })}
                     >
                     <Picker.Item label={this.state.sum2} value="" />
@@ -1329,11 +1333,14 @@ export default class BuildCreation extends Component {
                 </Picker>
                 
                 <TouchableOpacity
+                style={styles.inputstyle}
                 onPress={() => this._submit()}>
                     <Text>SUBMIT</Text>
                 </TouchableOpacity>
             </ScrollView>
+            </View>
         )
+        
     }
 }
 
@@ -1342,7 +1349,55 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop:'15%'
     }, 
-
+    inputstyle: {
+        borderRadius: 5,
+        padding: 0.5,
+        margin: 25,
+        borderWidth:1,
+        borderColor: '#bf8d3a',
+        height: 40,
+        width: 320
+    },
+    inputstyleJ: {
+        borderRadius: 5,
+        padding: 2,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#ffea05',
+        
+    },
+    inputstyleR: {
+        borderRadius: 5,
+        padding: 2,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#ff0505',
+        
+    },
+    inputstyleB: {
+        borderRadius: 5,
+        padding: 2,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#0e2fe9',
+        
+    },
+    inputstyleV: {
+        borderRadius: 5,
+        padding: 2,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#0ee924',
+        
+    },
+    inputstyleC: {
+        borderRadius: 5,
+        padding: 2,
+        margin: 20,
+        borderWidth:1,
+        borderColor: '#2ff1ff',
+        
+    },
 })
 
 

@@ -17,7 +17,7 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName="Accueil"
+      initialRouteName="BuildCreaction"
       screenOptions={{
         headerShown: false
       }}
