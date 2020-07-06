@@ -1425,9 +1425,3 @@ const styles = StyleSheet.create({
         color:'#2ff1ff'
     },
 })
-
-
-
-// spellbinder : 3907
-// ombre jumelle : 3905
-// targon ameliorer : 3860
