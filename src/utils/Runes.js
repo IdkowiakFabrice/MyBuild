@@ -62,7 +62,7 @@ export const RUNESIDBYNAME = [
     {id:'SavoirCosmique', name:'rp541'},
     {id:'VitesseDapproche', name:'rp542'},
     {id:'PhiltreDeChronodistorsion', name:'rp543'},
-    {id:'degat', name:'rt11'},
+    {id:'Dégat', name:'rt11'},
     {id:'AS', name:'rt12'},
     {id:'CDR', name:"rt13"},
     {id:'Armor', name:'rt22'},

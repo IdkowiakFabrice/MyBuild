@@ -925,7 +925,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label={this.state.rp3} value="" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                     </Picker>
 
                     <Picker
@@ -948,7 +948,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rp1:itemValue})}
                         >
                         <Picker.Item label={this.state.rp1} value="" />
-                        <Picker.Item label="Invocation d'Aery" value="InvocationDAery" />
+                        <Picker.Item label="Invocation d'Aery" value="InvocationAery" />
                         <Picker.Item label="Comète Arcanique" value="ComèteArcanique" />
                         <Picker.Item label="Rush Phasique" value="RushPhasique" />                        
                     </Picker> 
@@ -1037,7 +1037,7 @@ export default class BuildCreation extends Component {
                         >
                         <Picker.Item label={this.state.rp1} value="" />
                         <Picker.Item label="Optimisation Glaciale" value="OptimisationGlaciale" />
-                        <Picker.Item label="Grimoire Déchaîné" value="GrimoireDéchaîné" />
+                        <Picker.Item label="Grimoire Déchaîné" value="GrimoireDéchainé" />
                         <Picker.Item label="Prototype Omnipierre" value="PrototypeOmnipierre" />                        
                     </Picker> 
 
@@ -1046,7 +1046,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rp2:itemValue})}
                         >
                         <Picker.Item label={this.state.rp2} value="" />
-                        <Picker.Item label="Canaliportation Hextech" value="CanaliportaionHextech" />   
+                        <Picker.Item label="Canaliportation Hextech" value="CanaliportationHextech" />   
                         <Picker.Item label="Chaussures Magiques" value="ChaussuresMagiques" />
                         <Picker.Item label="Timing Parfait" value="TimingParfait" />
                     </Picker>
@@ -1133,7 +1133,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Ruée Offensive" value="RuéeOffensive" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                         <Picker.Item label="Chasseur Vorace" value="ChasseurVorace" />
                         <Picker.Item label="Chasseur Ingénieux" value="ChasseurIngénieux" />
                         <Picker.Item label="Chasseur Acharné" value="ChasseurAcharné" />
@@ -1149,7 +1149,7 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Ruée Offensive" value="RuéeOffensive" />
                         <Picker.Item label="Balise Zombie" value="BaliseZombie" />
                         <Picker.Item label="Poro Fantôme" value="PoroFantôme" />
-                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurDOeil" />
+                        <Picker.Item label="Arracheur d'Oeil" value="ArracheurOeil" />
                         <Picker.Item label="Chasseur Vorace" value="ChasseurVorace" />
                         <Picker.Item label="Chasseur Ingénieux" value="ChasseurIngénieux" />
                         <Picker.Item label="Chasseur Acharné" value="ChasseurAcharné" />
@@ -1204,8 +1204,8 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Fontaine de Vie" value="FontaineDeVie" />
                         <Picker.Item label="Coup de Bouclier" value="CoupDeBouclier" />     
                         <Picker.Item label="Conditionnement" value="Conditionnement" />
-                        <Picker.Item label="Second Souffle" value="Second Souffle" />
-                        <Picker.Item label="Plaque D'Os" value="PlaqueDOs" />   
+                        <Picker.Item label="Second Souffle" value="SecondSouffle" />
+                        <Picker.Item label="Plaque D'Os" value="PlaqueDos" />   
                         <Picker.Item label="Surcroissance" value="Surcroissance" />
                         <Picker.Item label="Revitalisation" value="Revitalisation" />
                         <Picker.Item label="Inébranlable" value="Inébranlable" />        
@@ -1219,8 +1219,8 @@ export default class BuildCreation extends Component {
                         <Picker.Item label="Fontaine de Vie" value="FontaineDeVie" />
                         <Picker.Item label="Coup de Bouclier" value="CoupDeBouclier" />     
                         <Picker.Item label="Conditionnement" value="Conditionnement" />
-                        <Picker.Item label="Second Souffle" value="Second Souffle" />
-                        <Picker.Item label="Plaque D'Os" value="PlaqueDOs" />   
+                        <Picker.Item label="Second Souffle" value="SecondSouffle" />
+                        <Picker.Item label="Plaque D'Os" value="PlaqueDos" />   
                         <Picker.Item label="Surcroissance" value="Surcroissance" />
                         <Picker.Item label="Revitalisation" value="Revitalisation" />
                         <Picker.Item label="Inébranlable" value="Inébranlable" />        
@@ -1250,7 +1250,7 @@ export default class BuildCreation extends Component {
                         onValueChange={(itemValue) => this.setState({rs2:itemValue})}
                         >
                         <Picker.Item label={this.state.rs2} value="" />
-                        <Picker.Item label="Canaliportation Hextech" value="CanaliportaionHextech" />   
+                        <Picker.Item label="Canaliportation Hextech" value="CanaliportationHextech" />   
                         <Picker.Item label="Chaussures Magiques" value="ChaussuresMagiques" />
                         <Picker.Item label="Timing Parfait" value="TimingParfait" />
                         <Picker.Item label="Marché du Futur" value="MarchéDuFutur" />
@@ -1269,7 +1269,7 @@ export default class BuildCreation extends Component {
                     onValueChange={(itemValue) =>  this.setState({rt1:itemValue })}
                     >
                     <Picker.Item label={this.state.rt1} value="" />
-                    <Picker.Item label="Degat" value="degat" />
+                    <Picker.Item label="Dégat" value="Dégat" />
                     <Picker.Item label="Rapidité d'attaque" value="AS" />
                     <Picker.Item label="Reduction des delais" value="CDR" />
                 </Picker>
@@ -1278,7 +1278,7 @@ export default class BuildCreation extends Component {
                     onValueChange={(itemValue) =>  this.setState({rt2:itemValue })}
                     >
                     <Picker.Item label={this.state.rt2} value="" />
-                    <Picker.Item label="Degat" value="degat" />
+                    <Picker.Item label="Dégat" value="Dégat" />
                     <Picker.Item label="Armure" value="Armor" />
                     <Picker.Item label="Resistance magique" value="MR" />
                 </Picker>
