@@ -139,17 +139,14 @@ export default class ChampionListBuild extends Component {
                     />
                     </View>
                     <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
-                    <Image
-                    style={{flexDirection: 'row', width:100, height:100}}
-                        source={{uri : 'https://raw.githubusercontent.com/YanisRili/MyBuild_Summs/master/summs/01.PNG'}}
-                    />
-                    {this.state.builds !== '' ?this.renderBuild() : null}
                     <TouchableOpacity
                         onPress={() => this._navigate()}
                         style={styles.buttonContainer}
                         >
                             <Text>+ Ajouter un build</Text>
                     </TouchableOpacity>
+                    {this.state.builds !== '' ?this.renderBuild() : null}
+                    
                 </ScrollView>
             </View>
         )
