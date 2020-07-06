@@ -70,9 +70,8 @@ export default class ChampionListBuild extends Component {
         };
         axios.get('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/buildByChamp/'+ this.state.idChamp, axiosConfig)
         .then((response) => {
-            let item1 = 'https://github.com/YanisRili/MyBuild_Items/blob/master/items/01.PNG'
             this.setState({builds : response.data})
-            console.log(this.state.builds)
+            //console.log(this.state.builds[2].sum1)
         })
         .catch((error) => {
           console.log(error)
@@ -90,6 +89,39 @@ export default class ChampionListBuild extends Component {
           } catch (error) {
            console.error(error);
           }
+      }
+
+      renderBuild(){
+          return this.state.builds.map(build => {
+              return(
+                <View>
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item1}}
+                />
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item2}}
+                />
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item3}}
+                />
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item4}}
+                />
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item5}}
+                />
+                  <Image
+                    style={{flexDirection: 'row', width:20, height:20}}
+                    source={{uri : build.item6}}
+                />
+                </View>
+              )
+          })
       }
 
     componentDidMount(){
@@ -111,6 +143,7 @@ export default class ChampionListBuild extends Component {
                     style={{flexDirection: 'row', width:100, height:100}}
                         source={{uri : 'https://raw.githubusercontent.com/YanisRili/MyBuild_Summs/master/summs/01.PNG'}}
                     />
+                    {this.state.builds !== '' ?this.renderBuild() : null}
                     <TouchableOpacity
                         onPress={() => this._navigate()}
                         style={styles.buttonContainer}
