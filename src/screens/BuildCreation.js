@@ -851,7 +851,44 @@ export default class BuildCreation extends Component {
                     <Picker.Item label="Jungle: item bleu, Pierre bleu" value="JungleBleuBleu" />
                 </Picker>
                 </View>
-
+                {/* SUMMONER 1 */}
+                <View style={styles.inputstyle}>
+                <Picker
+                    style={styles.inputstyle}
+                    onValueChange={(itemValue) =>  this.setState({sum1:itemValue })}
+                    >
+                    <Picker.Item label={this.state.sum1} value="" />
+                    <Picker.Item label="Soin" value="Soin" />
+                    <Picker.Item label="Fantome" value="Fantome" />
+                    <Picker.Item label="Barrière" value="Barrière" />
+                    <Picker.Item label="Fatigue" value="Fatigue" />
+                    <Picker.Item label="Clartée" value="Clartée" />
+                    <Picker.Item label="Flash" value="Flash" />
+                    <Picker.Item label="Téléportation" value="Téléportation" />
+                    <Picker.Item label="Chatiment" value="Chatiment" />
+                    <Picker.Item label="Purge" value="Purge" />
+                    <Picker.Item label="Embrasement" value="Embrasement" />
+                </Picker>
+                </View>
+                {/* SUMMONER 2 */}
+                <View style={styles.inputstyle}>
+                <Picker
+                    style={styles.inputstyle}
+                    onValueChange={(itemValue) =>  this.setState({sum2:itemValue })}
+                    >
+                    <Picker.Item label={this.state.sum2} value="" />
+                    <Picker.Item label="Soin" value="Soin" />
+                    <Picker.Item label="Fantome" value="Fantome" />
+                    <Picker.Item label="Barrière" value="Barrière" />
+                    <Picker.Item label="Fatigue" value="Fatigue" />
+                    <Picker.Item label="Clartée" value="Clartée" />
+                    <Picker.Item label="Flash" value="Flash" />
+                    <Picker.Item label="Téléportation" value="Téléportation" />
+                    <Picker.Item label="Chatiment" value="Chatiment" />
+                    <Picker.Item label="Purge" value="Purge" />
+                    <Picker.Item label="Embrasement" value="Embrasement" />
+                </Picker>
+                </View>
                 {/* Arbre PRINCIPALE */}
                 <View style={styles.inputstyle}>
                     <Picker
@@ -1290,8 +1327,8 @@ export default class BuildCreation extends Component {
                     >
                     <Picker.Item label={this.state.rt1} value="" />
                     <Picker.Item label="Dégat" value="Dégat" />
-                    <Picker.Item label="Rapidité d'attaque" value="AS" />
-                    <Picker.Item label="Reduction des delais" value="CDR" />
+                    <Picker.Item label="Vitesse d'attaque" value="AS" />
+                    <Picker.Item label="Réduction des delais" value="CDR" />
                 </Picker>
                 </View>
                 <View style={styles.inputstyle}>
@@ -1316,49 +1353,10 @@ export default class BuildCreation extends Component {
                     <Picker.Item label="Resistance magique" value="MR" />
                 </Picker>
                 </View>
-
-                {/* SUMMONER 1 */}
-                <View style={styles.inputstyle}>
-                <Picker
-                    style={styles.inputstyle}
-                    onValueChange={(itemValue) =>  this.setState({sum1:itemValue })}
-                    >
-                    <Picker.Item label={this.state.sum1} value="" />
-                    <Picker.Item label="Soin" value="Soin" />
-                    <Picker.Item label="Fantome" value="Fantome" />
-                    <Picker.Item label="Barrière" value="Barrière" />
-                    <Picker.Item label="Fatigue" value="Fatigue" />
-                    <Picker.Item label="Clartée" value="Clartée" />
-                    <Picker.Item label="Flash" value="Flash" />
-                    <Picker.Item label="Téléportation" value="Téléportation" />
-                    <Picker.Item label="Chatiment" value="Chatiment" />
-                    <Picker.Item label="Purge" value="Purge" />
-                    <Picker.Item label="Embrasement" value="Embrasement" />
-                </Picker>
-                </View>
-                {/* SUMMONER 2 */}
-                <View style={styles.inputstyle}>
-                <Picker
-                    style={styles.inputstyle}
-                    onValueChange={(itemValue) =>  this.setState({sum2:itemValue })}
-                    >
-                    <Picker.Item label={this.state.sum2} value="" />
-                    <Picker.Item label="Soin" value="Soin" />
-                    <Picker.Item label="Fantome" value="Fantome" />
-                    <Picker.Item label="Barrière" value="Barrière" />
-                    <Picker.Item label="Fatigue" value="Fatigue" />
-                    <Picker.Item label="Clartée" value="Clartée" />
-                    <Picker.Item label="Flash" value="Flash" />
-                    <Picker.Item label="Téléportation" value="Téléportation" />
-                    <Picker.Item label="Chatiment" value="Chatiment" />
-                    <Picker.Item label="Purge" value="Purge" />
-                    <Picker.Item label="Embrasement" value="Embrasement" />
-                </Picker>
-                </View>
                     <TouchableOpacity
                         style={styles.buttonReturnContainer}
-                        onPress={() => this.props.navigation.navigate('BuildCreaction')}>
-                        <Text style={styles.buttonText}>Ajouter un build</Text>
+                        onPress={() => this._submit()}>
+                        <Text style={styles.buttonText}>Créer un build</Text>
                     </TouchableOpacity>
             </ScrollView>
             </View>
