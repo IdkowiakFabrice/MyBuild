@@ -1,4 +1,4 @@
-export const ITEMSBYID = [
+export const SUMMSIDBYNAME = [
     {id:'Soin', name:'01'},
     {id:'Fantome', name:'02'},
     {id:'Barrière', name:'03'},

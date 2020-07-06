@@ -1,4 +1,4 @@
-export const RUNEBYID = [
+export const RUNESIDBYNAME = [
     {id:'AttaqueSoutenue', name:'rp111'},
     {id:'TempoMortel', name:'rp112'},
     {id:'JeuDeJambe', name:'rp113'},

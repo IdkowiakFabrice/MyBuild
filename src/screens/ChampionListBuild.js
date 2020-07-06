@@ -33,6 +33,7 @@ export default class ChampionListBuild extends Component {
         rt3: '',
         sum1: '',
         sum2: '',
+        builds: ''
       };
 
     _retrieveData = async () => {
@@ -45,6 +46,7 @@ export default class ChampionListBuild extends Component {
               this.setState({ idUser })
             }
             if (token !== null) {
+                console.log(token)
                 this.setState({ token })
             }
             if (idChamp !== null) {
@@ -66,10 +68,11 @@ export default class ChampionListBuild extends Component {
                 'Authorization': 'Bearer ' + this.state.token
           }
         };
-        axios.get('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/build/1', axiosConfig)
+        axios.get('https://mybuild-api.herokuapp.com/api/users/' + this.state.idUser + '/buildByChamp/'+ this.state.idChamp, axiosConfig)
         .then((response) => {
-            let item1 = response.data.data.build.item1
-            this.setState({item1})
+            let item1 = 'https://github.com/YanisRili/MyBuild_Items/blob/master/items/01.PNG'
+            this.setState({builds : response.data})
+            console.log(this.state.builds)
         })
         .catch((error) => {
           console.log(error)
@@ -77,12 +80,11 @@ export default class ChampionListBuild extends Component {
       }
       
       _navigate(){
-          this._StoreData()
+          this._StoreData(this.state.token, this.state.idUser, this.state.idChamp)
           this.props.navigation.navigate('BuildCreaction')
-
       }
 
-      _StoreData(){
+      _StoreData = (token, idUser, idChamp) =>{
         try {
             AsyncStorage.multiSet([['@token', token], ['@idUser', idUser], ['@idChamp', idChamp]])
           } catch (error) {
@@ -107,7 +109,7 @@ export default class ChampionListBuild extends Component {
                     <Text style={styles.iconText}>{CHAMPIONBYID[this.state.idChamp]['name']}</Text>
                     <Image
                     style={{flexDirection: 'row', width:100, height:100}}
-                        source={{uri : this.state.item1}}
+                        source={{uri : 'https://raw.githubusercontent.com/YanisRili/MyBuild_Summs/master/summs/01.PNG'}}
                     />
                     <TouchableOpacity
                         onPress={() => this._navigate()}

@@ -1,4 +1,4 @@
-export const ITEMSBYID = [
+export const ITEMSIDBYNAME = [
     {id:'BouclierRelique', name:'01'},
     {id:'FaucilleSpectrale', name:'02'},
     {id:'GardeEpauleAcier', name:'03'},
@@ -7,7 +7,7 @@ export const ITEMSBYID = [
     {id:'BotteLucidité', name:'06'},
     {id:'BotteMobilité', name:'07'},
     {id:'SandalesMercure', name:'08'},
-    {id:'BottesBerzerker', name:'09'},
+    {id:'BotteBerzerker', name:'09'},
     {id:'ChaussureSorcier', name:'10'},
     {id:'TabiNinja', name:'11'},
     {id:'Mejai', name:'12'},
