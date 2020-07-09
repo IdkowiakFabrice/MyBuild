@@ -1,14 +1,13 @@
 						ECRAN
 
-- Accueil (liste champs)
+- Accueil (connexion/inscription)
 - Connexion
-- MDP Oublié
 - Inscritpion
 - Profil
 - Liste build/champs
 - Affichage build select
-- Création/Modif build
-- Confirmation (Inscription/MDP Oublié)+(création/modif build)
+- Création build
+- Confirmation (Inscription)
 
 						API
 
